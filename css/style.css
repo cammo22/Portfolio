@@ -1,0 +1,389 @@
+/* Stile generale */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Stile per lo sfondo Matrix */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.15; /* Opacità ridotta per non essere troppo intrusivo */
+    overflow: hidden;
+}
+
+.matrix-rain {
+    color: #0f0;
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px #0f0;
+}
+
+/* Stile per il contenitore principale */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stile per l'header */
+header {
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #0f0;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #ccc;
+}
+
+/* Stile per la navigazione */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #0f0;
+    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2);
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav .logo-text {
+    color: #0f0;
+    font-weight: bold;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: block;
+}
+
+nav ul li a:hover {
+    color: #0f0;
+    background-color: rgba(0, 255, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+nav ul li a.active {
+    color: #0f0;
+    border-bottom: 2px solid #0f0;
+}
+
+/* Hamburger menu per mobile */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover span {
+    background-color: #0f0;
+}
+
+/* Stile per la sezione about */
+.about {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+.about-img {
+    flex: 1;
+    text-align: center;
+}
+
+.about-img img {
+    max-width: 300px;
+    border-radius: 50%;
+    border: 3px solid #0f0;
+}
+
+.about-text {
+    flex: 2;
+    padding: 0 30px;
+}
+
+.about-text h2 {
+    color: #0f0;
+    margin-bottom: 20px;
+}
+
+/* Stile per le sezioni dei servizi */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.service-card {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+    border: 1px solid #333;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: #0f0;
+}
+
+.service-card h3 {
+    color: #0f0;
+    margin-bottom: 15px;
+}
+
+.service-card i {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #0f0;
+}
+
+/* Stile per la sezione introduttiva */
+.intro-section {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    margin: 50px 0;
+    border: 1px solid #333;
+}
+
+.intro-section h2 {
+    color: #0f0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro-section i {
+    margin-right: 10px;
+}
+
+.intro-content {
+    line-height: 1.8;
+}
+
+.intro-content p {
+    margin-bottom: 15px;
+}
+
+.intro-content strong {
+    color: #0f0;
+}
+
+/* Stile per la sezione video */
+.video-gallery {
+    margin: 50px 0;
+}
+
+.video-gallery h2 {
+    text-align: center;
+    color: #0f0;
+    margin-bottom: 30px;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-item {
+    position: relative;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid #333;
+    transition: border-color 0.3s;
+}
+
+.video-item:hover {
+    border-color: #0f0;
+}
+
+.video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.main-embed {
+    grid-column: 1 / -1;
+}
+
+.featured-videos {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+}
+
+.featured-videos h3 {
+    color: #0f0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.channel-link {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.channel-link .btn {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin: 15px 0;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.channel-link .btn:hover {
+    transform: translateY(-5px);
+    background-color: #cc0000;
+}
+
+.channel-link .note {
+    font-size: 0.9em;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Stile per il footer */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-top: 50px;
+    border-top: 1px solid #0f0;
+}
+
+footer p {
+    color: #ccc;
+}
+
+/* Stile per i link */
+a {
+    color: #0f0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #fff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+    }
+    
+    .about-img {
+        margin-bottom: 30px;
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    nav .container {
+        flex-wrap: wrap;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        margin-top: 15px;
+    }
+    
+    nav ul.show {
+        max-height: 300px;
+    }
+    
+    nav ul li {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul li a {
+        padding: 12px;
+        width: 100%;
+    }
+    
+    nav ul li a:hover {
+        background-color: rgba(0, 255, 0, 0.2);
+    }
+}
