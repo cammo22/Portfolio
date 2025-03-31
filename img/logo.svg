@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <rect width="40" height="40" rx="5" fill="#000" stroke="#0f0" stroke-width="2"/>
+  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0f0" text-anchor="middle" dominant-baseline="middle">DP</text>
+  <path d="M5 35 L35 5" stroke="#0f0" stroke-width="1" opacity="0.3"/>
+  <path d="M5 5 L35 35" stroke="#0f0" stroke-width="1" opacity="0.3"/>
+</svg>
