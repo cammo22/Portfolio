@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaProdProduzioni - Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sfondo Matrix -->
+    <div class="matrix-bg" id="matrix-bg"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>DaProdProduzioni</h1>
+            <p>Stampa 3D | Software AI | Produzioni Musicali</p>
+        </div>
+    </header>
+
+    <!-- Navigazione -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.svg" alt="DaProdProduzioni Logo">
+                <span class="logo-text">DaProdProduzioni</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="stampa3d.html">Stampa 3D</a></li>
+                <li><a href="software.html">Software AI</a></li>
+                <li><a href="musica.html">Produzioni Musicali</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenuto principale -->
+    <main class="container">
+        <!-- Sezione Servizi -->
+        <div class="services">
+            <!-- Stampa 3D -->
+            <div id="stampa3d" class="service-card">
+                <i class="fas fa-cube"></i>
+                <h3>Stampa 3D</h3>
+                <p>Realizzo modelli 3D personalizzati e li porto alla vita attraverso la stampa 3D. Dai prototipi ai prodotti finiti, offro soluzioni creative e funzionali per le tue esigenze.</p>
+                <p>Utilizzo tecnologie all'avanguardia per garantire la massima qualità e precisione nei dettagli.</p>
+                <a href="stampa3d.html" class="btn">Scopri di più</a>
+            </div>
+
+            <!-- Software AI -->
+            <div id="software" class="service-card">
+                <i class="fas fa-robot"></i>
+                <h3>Software AI per Locali</h3>
+                <p>Sviluppo soluzioni software basate sull'intelligenza artificiale per migliorare l'esperienza nei locali. Dalla gestione delle prenotazioni all'analisi dei dati, le mie soluzioni aiutano a ottimizzare i processi e migliorare il servizio.</p>
+                <p>Ogni software è personalizzato in base alle specifiche esigenze del cliente.</p>
+                <a href="software.html" class="btn">Scopri di più</a>
+            </div>
+
+            <!-- Produzioni Musicali -->
+            <div id="musica" class="service-card">
+                <i class="fas fa-music"></i>
+                <h3>Produzioni Musicali</h3>
+                <p>Compongo e produco musica originale per vari progetti. Dal mio canale YouTube DaProdMusica, condivido le mie creazioni e collaboro con artisti per dare vita a progetti musicali unici.</p>
+                <p>Scopri di più nella sezione dedicata alle produzioni musicali.</p>
+                <a href="musica.html" class="btn">Visualizza i miei video</a>
+            </div>
+        </div>
+
+        <!-- Sezione Chi Sono -->
+        <section id="about" class="about">
+            <div class="about-img">
+                <img src="img/fotoprofilo.JPG" alt="Cammo">
+            </div>
+            <div class="about-text">
+                <h2>Chi Sono</h2>
+                <p>Ciao, sono Cammo, classe '96, un appassionato di tecnologia di Napoli. La mia passione per l'innovazione mi ha portato a esplorare diversi campi tecnologici, dalla stampa 3D allo sviluppo di software AI, fino alla produzione musicale e video.</p>
+                <p>Attraverso questo portfolio, voglio condividere con voi i miei progetti e le mie competenze, mostrando come la tecnologia possa essere utilizzata in modi creativi e innovativi.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DaProdProduzioni. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- Script per l'effetto Matrix -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const matrixBg = document.getElementById('matrix-bg');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const fontSize = 14;
+            const columns = Math.floor(width / fontSize);
+            
+            // Caratteri Matrix
+            const matrixChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+            
+            // Array per tenere traccia della posizione Y di ogni colonna
+            const drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+            
+            // Funzione per creare l'effetto pioggia Matrix
+            function drawMatrix() {
+                // Pulisci il contenitore
+                matrixBg.innerHTML = '';
+                
+                // Crea elementi per ogni carattere
+                for (let i = 0; i < columns; i++) {
+                    if (Math.random() > 0.98) { // Probabilità di far cadere un nuovo carattere
+                        const char = document.createElement('div');
+                        char.className = 'matrix-rain';
+                        char.style.left = i * fontSize + 'px';
+                        char.style.top = drops[i] * fontSize + 'px';
+                        char.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                        matrixBg.appendChild(char);
+                        
+                        // Incrementa la posizione Y
+                        drops[i]++;
+                        
+                        // Rimuovi il carattere dopo un po'
+                        setTimeout(() => {
+                            if (char.parentNode === matrixBg) {
+                                matrixBg.removeChild(char);
+                            }
+                        }, 2000);
+                        
+                        // Resetta la posizione Y se raggiunge il fondo
+                        if (drops[i] * fontSize > height && Math.random() > 0.95) {
+                            drops[i] = 0;
+                        }
+                    }
+                }
+            }
+            
+            // Esegui l'animazione
+            setInterval(drawMatrix, 100);
+        });
+        
+        // Script per il menu mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Chiudi il menu quando si clicca su un link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

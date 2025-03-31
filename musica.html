@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaProdProduzioni - Produzioni Musicali</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sfondo Matrix -->
+    <div class="matrix-bg" id="matrix-bg"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Produzioni Musicali</h1>
+            <p>DaProdMusica - Il nostro canale YouTube</p>
+        </div>
+    </header>
+
+    <!-- Navigazione -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.svg" alt="DaProdProduzioni Logo">
+                <span class="logo-text">DaProdProduzioni</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="stampa3d.html">Stampa 3D</a></li>
+                <li><a href="software.html">Software AI</a></li>
+                <li><a href="#" class="active">Produzioni Musicali</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenuto principale -->
+    <main class="container">
+        <section class="intro-section">
+            <h2><i class="fas fa-music"></i> La Mia Filosofia</h2>
+            <div class="intro-content">
+                <p>Benvenuto nella sezione dedicata alle nostre produzioni musicali. Ciò che rende unico il nostro approccio è l'utilizzo <strong>esclusivo di software open source</strong> per tutte le fasi di produzione, dalla composizione al mastering finale.</p>
+                
+                <p>Ogni brano che ascolterai è stato <strong>generato completamente offline</strong>, sfruttando unicamente la potenza di elaborazione dei nostri PC. Nessun servizio cloud o strumento proprietario è stato utilizzato nel processo creativo.</p>
+                
+                <p>Questa scelta non è solo etica ma anche pratica: dimostra che con gli strumenti giusti e la conoscenza adeguata, è possibile raggiungere <strong>qualsiasi livello di qualità</strong> desiderato. Le produzioni che vedrai sono costantemente migliorabili e personalizzabili in base alle esigenze specifiche di ogni progetto.</p>
+                
+                <p>Esplora i nostri video qui sotto e scopri cosa si può realizzare con la passione per la musica e l'impegno verso soluzioni tecnologiche libere e accessibili.</p>
+            </div>
+        </section>
+        
+        <section class="video-gallery">
+            <h2>I Nostri Video</h2>
+            <p class="text-center">Ecco le produzioni musicali dal canale YouTube DaProdMusica. Ogni video rappresenta un progetto unico realizzato interamente con strumenti open source.</p>
+            
+            <div id="playlist-container" class="video-container">
+                <!-- I video verranno caricati qui dinamicamente -->
+                <div class="loading">Caricamento dei video in corso...</div>
+            </div>
+        </section>
+        
+        <section class="contact-section">
+            <h2>Contattami</h2>
+            <p>Sei interessato a collaborare per un progetto musicale o hai domande sulle mie produzioni? Contattami per discuterne insieme.</p>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: <a href="mailto:daprod22@gmail.com">daprod22@gmail.com</a> <a id="email-link" href="mailto:daprod22@gmail.com" class="btn-small"><i class="fas fa-envelope"></i> Email</a></p>
+                <p><i class="fas fa-phone"></i> Telefono: <span id="phone-number" class="censored-phone">XXX-XXX-XXXX</span> <button id="reveal-phone" class="btn-small">Mostra</button> <a id="whatsapp-link" href="https://wa.me/393348278543" target="_blank" style="display: none;" class="btn-small"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DaProdProduzioni. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- Script per l'effetto Matrix -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const matrixBg = document.getElementById('matrix-bg');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const fontSize = 14;
+            const columns = Math.floor(width / fontSize);
+            
+            // Caratteri Matrix
+            const matrixChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+            
+            // Array per tenere traccia della posizione Y di ogni colonna
+            const drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+            
+            // Funzione per creare l'effetto pioggia Matrix
+            function drawMatrix() {
+                // Pulisci il contenitore
+                matrixBg.innerHTML = '';
+                
+                // Crea elementi per ogni carattere
+                for (let i = 0; i < columns; i++) {
+                    if (Math.random() > 0.98) { // Probabilità di far cadere un nuovo carattere
+                        const char = document.createElement('div');
+                        char.className = 'matrix-rain';
+                        char.style.left = i * fontSize + 'px';
+                        char.style.top = drops[i] * fontSize + 'px';
+                        char.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                        matrixBg.appendChild(char);
+                        
+                        // Incrementa la posizione Y
+                        drops[i]++;
+                        
+                        // Rimuovi il carattere dopo un po'
+                        setTimeout(() => {
+                            if (char.parentNode === matrixBg) {
+                                matrixBg.removeChild(char);
+                            }
+                        }, 2000);
+                        
+                        // Resetta la posizione Y se raggiunge il fondo
+                        if (drops[i] * fontSize > height && Math.random() > 0.95) {
+                            drops[i] = 0;
+                        }
+                    }
+                }
+            }
+            
+            // Esegui l'animazione
+            setInterval(drawMatrix, 100);
+        });
+    </script>
+
+    <!-- Stili per la griglia video e la sezione contatti -->
+    <style>
+        /* Stili per la griglia video */
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        
+        .video-item {
+            flex: 0 0 calc(33.333% - 20px);
+            position: relative;
+            padding-bottom: 18.75%; /* Aspect ratio 16:9 diviso per 3 colonne */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 1px solid #333;
+            transition: border-color 0.3s, transform 0.3s;
+            margin-bottom: 20px;
+        }
+        
+        .video-item:hover {
+            border-color: #0f0;
+            transform: scale(1.03);
+        }
+        
+        .video-item.active {
+            border-color: #0f0;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+        }
+        
+        .video-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .main-embed {
+            flex: 0 0 100%;
+            padding-bottom: 56.25%;
+            margin-bottom: 30px;
+        }
+        
+        /* Stili per la sezione contatti */
+        .contact-info {
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+        
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        
+        .contact-info i {
+            color: #0f0;
+            margin-right: 10px;
+        }
+        
+        .censored-phone {
+            cursor: pointer;
+        }
+        
+        .btn-small {
+            background-color: #7f7f7f; /* Colore neutro (grigio) */
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-left: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-small:hover {
+            background-color: #aaa;
+        }
+        
+        /* Stile specifico per il pulsante WhatsApp */
+        #whatsapp-link i {
+            color: #25D366; /* Colore del logo WhatsApp */
+        }
+        
+        /* Stile specifico per il pulsante Email */
+        #email-link i {
+            color: #4285F4; /* Colore blu per l'icona email */
+        }
+        
+        /* Responsive design per il carosello */
+        @media (max-width: 992px) {
+            .video-item {
+                flex: 0 0 calc(50% - 20px);
+                padding-bottom: 28.125%; /* Aspect ratio 16:9 diviso per 2 colonne */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .video-item {
+                flex: 0 0 100%;
+                padding-bottom: 56.25%; /* Aspect ratio 16:9 per 1 colonna */
+            }
+        }
+    </style>
+    
+    <!-- Script per caricare i video dal canale YouTube -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ID del canale YouTube
+            const channelId = '@DaProdMusica';
+            // Array per memorizzare i video caricati
+            let allVideos = [];
+            
+            // Funzione per caricare i video dal file video.txt
+            function loadChannelVideos() {
+                const container = document.getElementById('playlist-container');
+                
+                // Rimuovi il messaggio di caricamento
+                container.innerHTML = '';
+                
+                // Video predefiniti in caso di errore (fallback)
+                const fallbackVideos = [
+                    'jexuwfBA0Fo', // ID del primo video dal file video.txt
+                    'mXyZzCB0ba8', // ID del secondo video dal file video.txt
+                    'XYIkNkon4gQ'  // ID del terzo video dal file video.txt
+                ];
+                
+                // Carica i video dal file video.txt
+                fetch('video.txt')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`Errore HTTP: ${response.status} - ${response.statusText}`);
+                        }
+                        return response.text();
+                    })
+                    .then(data => {
+                        if (!data || data.trim() === '') {
+                            throw new Error('Il file video.txt è vuoto');
+                        }
+                        
+                        // Dividi il contenuto del file per righe
+                        const videoLinks = data.split('\n').filter(link => link.trim() !== '');
+                        
+                        if (videoLinks.length === 0) {
+                            throw new Error('Nessun link video valido trovato nel file');
+                        }
+                        
+                        // Estrai gli ID dei video dai link
+                        allVideos = videoLinks.map(link => {
+                            // Estrai l'ID del video dal link di YouTube
+                            // Formato: https://www.youtube.com/watch?v=ID_VIDEO
+                            const videoId = link.split('v=')[1];
+                            // In caso ci siano parametri aggiuntivi dopo l'ID
+                            return videoId ? videoId.split('&')[0] : '';
+                        }).filter(id => id !== '');
+                        
+                        if (allVideos.length === 0) {
+                            throw new Error('Impossibile estrarre ID video validi dai link');
+                        }
+                        
+                        // Messaggio se non ci sono abbastanza video
+                        if (allVideos.length < 3) {
+                            console.log('Attenzione: sono disponibili meno di 3 video. Considera di aggiungere più ID video nel file video.txt.');
+                        }
+                        
+                        // Mostra tutti i video
+                        displayAllVideos();
+                        
+                        // Aggiungi il messaggio per visitare il canale
+                        addChannelMessage();
+                    })
+                    .catch(error => {
+                        console.error('Errore nel caricamento del file video.txt:', error);
+                        
+                        // Usa i video di fallback
+                        console.log('Utilizzo dei video di fallback predefiniti');
+                        allVideos = fallbackVideos;
+                        
+                        // Mostra un messaggio di avviso
+                        const warningEl = document.createElement('div');
+                        warningEl.className = 'warning-message';
+                        warningEl.innerHTML = `
+                            <div style="text-align: center; padding: 15px; background-color: rgba(255, 204, 0, 0.2); border-radius: 10px; margin: 0 0 20px 0; border: 1px solid rgba(255, 204, 0, 0.5);">
+                                <i class="fas fa-info-circle" style="color: #ffcc00; margin-right: 10px;"></i>
+                                <span>Utilizzo dei video predefiniti. Alcuni contenuti potrebbero non essere aggiornati.</span>
+                            </div>
+                        `;
+                        container.appendChild(warningEl);
+                        
+                        // Mostra i video di fallback
+                        displayAllVideos();
+                        
+                        // Aggiungi comunque il messaggio del canale
+                        addChannelMessage();
+                    });
+            }
+            
+            // Funzione per aggiungere il messaggio che invita a visitare il canale YouTube
+            function addChannelMessage() {
+                    const container = document.getElementById('playlist-container');
+                    const message = document.createElement('div');
+                    message.className = 'text-center channel-link';
+                    message.style.margin = '30px 0';
+                    message.innerHTML = `
+                        <p>Scopri tutte le nostre produzioni musicali visitando il nostro canale YouTube:</p>
+                        <a href="https://www.youtube.com/@DaProdMusica/videos" target="_blank" class="btn">
+                            <i class="fab fa-youtube"></i> Visita il Canale DaProdMusica
+                        </a>
+                        <p class="note">Tutti i video sono realizzati con software open source e generati offline.</p>
+                    `;
+                    container.appendChild(message);
+                }
+            
+            // Gestione del numero di telefono
+            const phoneNumber = document.getElementById('phone-number');
+            const revealButton = document.getElementById('reveal-phone');
+            const whatsappLink = document.getElementById('whatsapp-link');
+            
+            // Numero di telefono reale
+            const realPhoneNumber = "334-827-8543";
+            
+            // Gestione del click sul pulsante per rivelare il numero
+            revealButton.addEventListener('click', function() {
+                phoneNumber.textContent = realPhoneNumber;
+                phoneNumber.style.color = '#0f0';
+                revealButton.style.display = 'none';
+                whatsappLink.style.display = 'inline-block';
+                
+                // Rendi il numero cliccabile per aprire WhatsApp
+                phoneNumber.style.cursor = 'pointer';
+                phoneNumber.addEventListener('click', function() {
+                    window.open('https://wa.me/393348278543', '_blank');
+                });
+            });
+            
+            // Gestione del menu mobile
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Chiudi il menu quando si clicca su un link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+            
+            // Funzione per mostrare tutti i video
+            function displayAllVideos() {
+                const container = document.getElementById('playlist-container');
+                container.innerHTML = '';
+                
+                // Mostra tutti i video
+                allVideos.forEach(videoId => {
+                    const videoItem = document.createElement('div');
+                    videoItem.className = 'video-item';
+                    videoItem.innerHTML = `
+                        <iframe 
+                            src="https://www.youtube.com/embed/${videoId}" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    `;
+                    
+                    // Aggiungi evento per evidenziare il video cliccato
+                    videoItem.addEventListener('click', function() {
+                        // Rimuovi la classe active da tutti i video
+                        document.querySelectorAll('.video-item').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        // Aggiungi la classe active al video cliccato
+                        this.classList.add('active');
+                    });
+                    
+                    container.appendChild(videoItem);
+                });
+            }
+            
+            // Carica i video
+            loadChannelVideos();
+        });
+    </script>
+</body>
+</html>

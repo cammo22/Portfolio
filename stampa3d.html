@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaProdProduzioni - Stampa 3D</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sfondo Matrix -->
+    <div class="matrix-bg" id="matrix-bg"></div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Stampa 3D</h1>
+            <p>Creazioni e Progetti</p>
+        </div>
+    </header>
+
+    <!-- Navigazione -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.svg" alt="DaProdProduzioni Logo">
+                <span class="logo-text">DaProdProduzioni</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" class="active">Stampa 3D</a></li>
+                <li><a href="software.html">Software AI</a></li>
+                <li><a href="musica.html">Produzioni Musicali</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenuto principale -->
+    <main class="container">
+        <section class="service-detail">
+            <h2><i class="fas fa-cube"></i> Servizi di Stampa 3D</h2>
+            <p>Offro servizi professionali di stampa 3D per trasformare le tue idee in oggetti reali. Utilizzo tecnologie all'avanguardia per garantire la massima qualità e precisione nei dettagli.</p>
+            
+            <div class="service-features">
+                <div class="feature-card">
+                    <h3>Modellazione 3D</h3>
+                    <p>Realizzo modelli 3D personalizzati utilizzando software professionali come Fusion 360, Blender e SolidWorks. Posso partire da un semplice schizzo o da specifiche tecniche dettagliate per creare modelli 3D precisi e funzionali. La modellazione 3D è il primo passo fondamentale per qualsiasi progetto di stampa 3D e garantisce che il prodotto finale rispetti esattamente le tue esigenze.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Prototipazione Rapida</h3>
+                    <p>La prototipazione rapida ti permette di verificare rapidamente la fattibilità del tuo progetto. Grazie alle moderne tecnologie di stampa 3D, posso realizzare prototipi funzionali in tempi brevi, permettendoti di testare, modificare e perfezionare il tuo design prima della produzione finale. Questo processo iterativo riduce i costi e i tempi di sviluppo, garantendo un prodotto finale ottimale.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <h3>Produzione su Piccola Scala</h3>
+                    <p>Quando hai bisogno di una serie limitata di prodotti, la stampa 3D rappresenta la soluzione ideale. Offro servizi di produzione su piccola scala con diverse tecnologie di stampa (FDM, SLA, SLS) e materiali (PLA, PETG, ABS, resine, nylon) per soddisfare specifiche esigenze di resistenza, flessibilità e finitura superficiale. Ogni pezzo viene controllato per garantire la massima qualità.</p>
+                </div>
+            </div>
+            
+
+            
+            <div class="contact-section">
+                <h2>Contattami</h2>
+                <p>Hai un'idea o un progetto che vorresti realizzare con la stampa 3D? Contattami per un preventivo gratuito e senza impegno.</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:daprod22@gmail.com">daprod22@gmail.com</a> <a id="email-link" href="mailto:daprod22@gmail.com" class="btn-small"><i class="fas fa-envelope"></i> Email</a></p>
+                    <p><i class="fas fa-phone"></i> Telefono: <span id="phone-number" class="censored-phone">XXX-XXX-XXXX</span> <button id="reveal-phone" class="btn-small">Mostra</button> <a id="whatsapp-link" href="https://wa.me/393348278543" target="_blank" style="display: none;" class="btn-small"><i class="fab fa-whatsapp"></i> WhatsApp</a></p>
+                </div>
+            </div>
+            
+            <style>
+                .contact-info {
+                    margin-top: 20px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 20px;
+                    border-radius: 10px;
+                    border: 1px solid #333;
+                }
+                
+                .contact-info p {
+                    margin: 10px 0;
+                    font-size: 1.1em;
+                }
+                
+                .contact-info i {
+                    color: #0f0;
+                    margin-right: 10px;
+                }
+                
+                .censored-phone {
+                    cursor: pointer;
+                }
+                
+                .btn-small {
+                    background-color: #7f7f7f; /* Colore neutro (grigio) */
+                    color: #fff;
+                    border: none;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 0.9em;
+                    margin-left: 10px;
+                    transition: background-color 0.3s;
+                }
+                
+                .btn-small:hover {
+                    background-color: #aaa;
+                }
+                
+                /* Stile specifico per il pulsante WhatsApp */
+                #whatsapp-link i {
+                    color: #25D366; /* Colore del logo WhatsApp */
+                }
+                
+                /* Stile specifico per il pulsante Email */
+                #email-link i {
+                    color: #4285F4; /* Colore blu per l'icona email */
+                }
+            </style>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 DaProdProduzioni. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <!-- Script per il menu mobile -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Chiudi il menu quando si clicca su un link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+    <!-- Script per l'effetto Matrix e per la gestione del numero di telefono -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Script per l'effetto Matrix
+            const matrixBg = document.getElementById('matrix-bg');
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const fontSize = 14;
+            const columns = Math.floor(width / fontSize);
+            
+            // Caratteri Matrix
+            const matrixChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+            
+            // Array per tenere traccia della posizione Y di ogni colonna
+            const drops = [];
+            for (let i = 0; i < columns; i++) {
+                drops[i] = 1;
+            }
+            
+            // Funzione per creare l'effetto pioggia Matrix
+            function drawMatrix() {
+                // Pulisci il contenitore
+                matrixBg.innerHTML = '';
+                
+                // Crea elementi per ogni carattere
+                for (let i = 0; i < columns; i++) {
+                    if (Math.random() > 0.98) { // Probabilità di far cadere un nuovo carattere
+                        const char = document.createElement('div');
+                        char.className = 'matrix-rain';
+                        char.style.left = i * fontSize + 'px';
+                        char.style.top = drops[i] * fontSize + 'px';
+                        char.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+                        matrixBg.appendChild(char);
+                        
+                        // Incrementa la posizione Y
+                        drops[i]++;
+                        
+                        // Rimuovi il carattere dopo un po'
+                        setTimeout(() => {
+                            if (char.parentNode === matrixBg) {
+                                matrixBg.removeChild(char);
+                            }
+                        }, 2000);
+                        
+                        // Resetta la posizione Y se raggiunge il fondo
+                        if (drops[i] * fontSize > height && Math.random() > 0.95) {
+                            drops[i] = 0;
+                        }
+                    }
+                }
+            }
+            
+            // Esegui l'animazione Matrix
+            setInterval(drawMatrix, 100);
+            
+            // Script per gestire la visualizzazione del numero di telefono
+            const phoneNumber = document.getElementById('phone-number');
+            const revealButton = document.getElementById('reveal-phone');
+            const whatsappLink = document.getElementById('whatsapp-link');
+            
+            // Numero di telefono reale
+            const realPhoneNumber = "334-827-8543";
+            
+            // Gestione del click sul pulsante per rivelare il numero
+            revealButton.addEventListener('click', function() {
+                phoneNumber.textContent = realPhoneNumber;
+                phoneNumber.style.color = '#0f0';
+                revealButton.style.display = 'none';
+                whatsappLink.style.display = 'inline-block';
+                
+                // Rendi il numero cliccabile per aprire WhatsApp
+                phoneNumber.style.cursor = 'pointer';
+                phoneNumber.addEventListener('click', function() {
+                    window.open('https://wa.me/393348278543', '_blank');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
