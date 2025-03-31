@@ -77,8 +77,22 @@ nav .logo {
 nav .logo img {
     height: 40px;
     margin-right: 10px;
+    background-color: transparent;
+    filter: drop-shadow(0 0 5px rgba(0, 255, 0, 0.8));
+    animation: pulse 2s infinite alternate;
 }
 
+/* Animazione pulse per il logo */
+@keyframes pulse {
+    from {
+        filter: drop-shadow(0 0 2px rgba(0, 255, 0, 0.5));
+        transform: scale(1);
+    }
+    to {
+        filter: drop-shadow(0 0 8px rgba(0, 255, 0, 0.9));
+        transform: scale(1.05);
+    }
+}
 nav .logo-text {
     color: #0f0;
     font-weight: bold;

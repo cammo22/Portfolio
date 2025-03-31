@@ -1,6 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
-  <rect width="40" height="40" rx="5" fill="#000" stroke="#0f0" stroke-width="2"/>
-  <text x="50%" y="50%" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#0f0" text-anchor="middle" dominant-baseline="middle">DP</text>
-  <path d="M5 35 L35 5" stroke="#0f0" stroke-width="1" opacity="0.3"/>
-  <path d="M5 5 L35 35" stroke="#0f0" stroke-width="1" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80">
+  <!-- Sfondo trasparente -->
+  <rect width="100%" height="100%" fill="transparent"/>
+  
+  <!-- Effetto glow per le lettere -->
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Lettere DPP con effetto Matrix -->
+  <g filter="url(#glow)">
+    <!-- Lettera D -->
+    <path d="M40,20 Q50,20 55,25 Q60,30 60,40 Q60,50 55,55 Q50,60 40,60 L25,60 L25,20 L40,20 Z" 
+          fill="none" stroke="#0f0" stroke-width="2"/>
+    <path d="M30,25 L40,25 Q45,25 50,30 Q55,35 55,40 Q55,45 50,50 Q45,55 40,55 L30,55 Z" 
+          fill="none" stroke="#0f0" stroke-width="1"/>
+    
+    <!-- Lettera P prima -->
+    <path d="M70,20 L85,20 Q95,20 100,25 Q105,30 105,35 Q105,40 100,45 Q95,50 85,50 L70,50 L70,60 L65,60 L65,20 L70,20 Z" 
+          fill="none" stroke="#0f0" stroke-width="2"/>
+    <path d="M70,25 L85,25 Q90,25 95,30 Q97,32 97,35 Q97,38 95,40 Q90,45 85,45 L70,45 Z" 
+          fill="none" stroke="#0f0" stroke-width="1"/>
+    
+    <!-- Lettera P seconda -->
+    <path d="M115,20 L130,20 Q140,20 145,25 Q150,30 150,35 Q150,40 145,45 Q140,50 130,50 L115,50 L115,60 L110,60 L110,20 L115,20 Z" 
+          fill="none" stroke="#0f0" stroke-width="2"/>
+    <path d="M115,25 L130,25 Q135,25 140,30 Q142,32 142,35 Q142,38 140,40 Q135,45 130,45 L115,45 Z" 
+          fill="none" stroke="#0f0" stroke-width="1"/>
+  </g>
+  
+  <!-- Codice binario decorativo -->
+  <text x="25" y="70" font-family="Courier New" font-size="8" fill="#0f0">10110101</text>
+  <text x="85" y="70" font-family="Courier New" font-size="8" fill="#0f0">01001101</text>
+  <text x="145" y="70" font-family="Courier New" font-size="8" fill="#0f0">11010010</text>
+  
+  <!-- Piccoli dettagli circuito -->
+  <line x1="25" y1="15" x2="60" y2="15" stroke="#0f0" stroke-width="1" opacity="0.5"/>
+  <line x1="65" y1="15" x2="105" y2="15" stroke="#0f0" stroke-width="1" opacity="0.5"/>
+  <line x1="110" y1="15" x2="150" y2="15" stroke="#0f0" stroke-width="1" opacity="0.5"/>
+  <circle cx="25" cy="15" r="2" fill="#0f0" opacity="0.8"/>
+  <circle cx="65" cy="15" r="2" fill="#0f0" opacity="0.8"/>
+  <circle cx="110" cy="15" r="2" fill="#0f0" opacity="0.8"/>
+  <circle cx="150" cy="15" r="2" fill="#0f0" opacity="0.8"/>
 </svg>

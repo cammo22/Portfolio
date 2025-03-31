@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DaProdProduzioni - Software AI</title>
+    <title>Cammo - Software AI</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -23,7 +23,7 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <img src="img/logo.svg" alt="DaProdProduzioni Logo">
+                <img src="img/logo.svg" alt="DPP Logo">
                 <span class="logo-text">DaProdProduzioni</span>
             </div>
             <div class="menu-toggle" id="mobile-menu">
@@ -199,31 +199,9 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 DaProdProduzioni. Tutti i diritti riservati.</p>
+            <p>&copy; 2023 Cammo. Tutti i diritti riservati.</p>
         </div>
     </footer>
-
-    <!-- Script per il menu mobile -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.getElementById('nav-menu');
-            
-            mobileMenu.addEventListener('click', function() {
-                navMenu.classList.toggle('show');
-                mobileMenu.classList.toggle('active');
-            });
-            
-            // Chiudi il menu quando si clicca su un link
-            const navLinks = document.querySelectorAll('#nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('show');
-                    mobileMenu.classList.remove('active');
-                });
-            });
-        });
-    </script>
 
     <!-- Script per l'effetto Matrix e per la gestione del numero di telefono -->
     <script>
@@ -278,6 +256,24 @@
             
             // Esegui l'animazione Matrix
             setInterval(drawMatrix, 100);
+            
+            // Gestione del menu mobile
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('nav-menu');
+            
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('show');
+                mobileMenu.classList.toggle('active');
+            });
+            
+            // Chiudi il menu quando si clicca su un link
+            const navLinks = document.querySelectorAll('#nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('show');
+                    mobileMenu.classList.remove('active');
+                });
+            });
             
             // Script per gestire la visualizzazione del numero di telefono
             const phoneNumber = document.getElementById('phone-number');
