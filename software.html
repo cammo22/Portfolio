@@ -33,6 +33,7 @@
             </div>
             <ul id="nav-menu">
                 <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#projects">Progetti</a></li>
                 <li><a href="stampa3d.html">Stampa 3D</a></li>
                 <li><a href="#" class="active">Software AI</a></li>
                 <li><a href="musica.html">Produzioni Musicali</a></li>
@@ -97,8 +98,8 @@
             </style>
             
             <section class="personal-ai-software">
-                <h2><i class="fas fa-laptop-code"></i> Software AI per Uso Personale</h2>
-                <p>Oltre alle soluzioni per locali, offro consulenza e supporto per l'installazione di potenti software AI per uso personale che ti permettono di sfruttare l'intelligenza artificiale direttamente sul tuo computer.</p>
+                <h2><i class="fas fa-laptop-code"></i> Software AI in Locale</h2>
+                <p>Oltre alle soluzioni professionali, offro consulenza e supporto per l'installazione di potenti software AI per uso personale che funzionano completamente in locale, senza necessità di connessione internet. Questi strumenti ti permettono di sfruttare l'intelligenza artificiale direttamente sul tuo computer, garantendo privacy totale e controllo completo sui tuoi dati.</p>
                 
                 <div class="software-card">
                     <div class="software-info">
@@ -199,104 +200,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 Cammo. Tutti i diritti riservati.</p>
+            <p>&copy; 2025 DaProdProduzioni. Tutti i diritti riservati.</p>
+            <p>Realizzato con passione e codice.</p>
+            <div class="social-links">
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <!-- Aggiungi altri link social se necessario -->
+            </div>
         </div>
     </footer>
 
-    <!-- Script per l'effetto Matrix e per la gestione del numero di telefono -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const matrixBg = document.getElementById('matrix-bg');
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            const fontSize = 14;
-            const columns = Math.floor(width / fontSize);
-            
-            // Caratteri Matrix
-            const matrixChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
-            
-            // Array per tenere traccia della posizione Y di ogni colonna
-            const drops = [];
-            for (let i = 0; i < columns; i++) {
-                drops[i] = 1;
-            }
-            
-            // Funzione per creare l'effetto pioggia Matrix
-            function drawMatrix() {
-                // Pulisci il contenitore
-                matrixBg.innerHTML = '';
-                
-                // Crea elementi per ogni carattere
-                for (let i = 0; i < columns; i++) {
-                    if (Math.random() > 0.98) { // Probabilità di far cadere un nuovo carattere
-                        const char = document.createElement('div');
-                        char.className = 'matrix-rain';
-                        char.style.left = i * fontSize + 'px';
-                        char.style.top = drops[i] * fontSize + 'px';
-                        char.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-                        matrixBg.appendChild(char);
-                        
-                        // Incrementa la posizione Y
-                        drops[i]++;
-                        
-                        // Rimuovi il carattere dopo un po'
-                        setTimeout(() => {
-                            if (char.parentNode === matrixBg) {
-                                matrixBg.removeChild(char);
-                            }
-                        }, 2000);
-                        
-                        // Resetta la posizione Y se raggiunge il fondo
-                        if (drops[i] * fontSize > height && Math.random() > 0.95) {
-                            drops[i] = 0;
-                        }
-                    }
-                }
-            }
-            
-            // Esegui l'animazione Matrix
-            setInterval(drawMatrix, 100);
-            
-            // Gestione del menu mobile
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.getElementById('nav-menu');
-            
-            mobileMenu.addEventListener('click', function() {
-                navMenu.classList.toggle('show');
-                mobileMenu.classList.toggle('active');
-            });
-            
-            // Chiudi il menu quando si clicca su un link
-            const navLinks = document.querySelectorAll('#nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('show');
-                    mobileMenu.classList.remove('active');
-                });
-            });
-            
-            // Script per gestire la visualizzazione del numero di telefono
-            const phoneNumber = document.getElementById('phone-number');
-            const revealButton = document.getElementById('reveal-phone');
-            const whatsappLink = document.getElementById('whatsapp-link');
-            
-            // Numero di telefono reale
-            const realPhoneNumber = "334-827-8543";
-            
-            // Gestione del click sul pulsante per rivelare il numero
-            revealButton.addEventListener('click', function() {
-                phoneNumber.textContent = realPhoneNumber;
-                phoneNumber.style.color = '#0f0';
-                revealButton.style.display = 'none';
-                whatsappLink.style.display = 'inline-block';
-                
-                // Rendi il numero cliccabile per aprire WhatsApp
-                phoneNumber.style.cursor = 'pointer';
-                phoneNumber.addEventListener('click', function() {
-                    window.open('https://wa.me/393348278543', '_blank');
-                });
-            });
-        });
-    </script>
+    <!-- Script per l'effetto Matrix -->
+    <script src="js/matrix-effect.js"></script>
+    <!-- Script per la logica generale dell'app (menu mobile, rivela telefono, caricamento video, ecc.) -->
+    <script src="js/app.js"></script>
 </body>
 </html>

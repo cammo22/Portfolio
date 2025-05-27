@@ -16,7 +16,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: 0.15; /* Opacità ridotta per non essere troppo intrusivo */
+    opacity: 0.3; /* Aumentata l'opacità per renderlo più visibile */
     overflow: hidden;
 }
 
@@ -37,7 +37,7 @@ body {
 
 /* Stile per l'header */
 header {
-    padding: 20px 0;
+    padding: 0 0 20px 0; /* Remove top padding, keep bottom padding */
     text-align: center;
 }
 
@@ -54,26 +54,70 @@ header p {
 
 /* Stile per la navigazione */
 nav {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 15px 0;
+    background-color: rgba(0, 0, 0, 0.18); /* Trasparenza ancora maggiore */
+    padding: 18px 0;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid #0f0;
-    box-shadow: 0 2px 10px rgba(0, 255, 0, 0.2);
+    border-bottom: none; /* Nessun bordo */
+    box-shadow: none; /* Nessuna ombra */
+    transition: all 0.5s ease;
+    backdrop-filter: blur(10px); /* Blur più marcato */
+    -webkit-backdrop-filter: blur(10px);
+    min-height: 56px;
+    overflow: visible;
+}
+
+/* Sfumatura verde molto leggera in basso per continuità */
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 10px;
+    background: linear-gradient(to bottom, rgba(0,255,0,0.08), transparent 90%);
+    pointer-events: none;
+    z-index: 101;
+}
+
+/* Aggiungi un effetto di gradiente sottile per una transizione più morbida */
+nav::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: linear-gradient(to bottom, rgba(0, 255, 0, 0.05), transparent);
+    pointer-events: none;
+}
+
+@keyframes navGlow {
+    from {
+        box-shadow: 0 2px 8px rgba(0, 255, 0, 0.1);
+    }
+    to {
+        box-shadow: 0 2px 15px rgba(0, 255, 0, 0.3);
+    }
 }
 
 nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
 }
 
 nav .logo {
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
 }
 
+nav .logo:hover {
+    transform: scale(1.05);
+}
 nav .logo img {
     height: 40px;
     margin-right: 10px;
@@ -121,17 +165,40 @@ nav ul li a {
     padding: 8px 12px;
     border-radius: 5px;
     display: block;
+    position: relative; /* Per l'effetto di sottolineatura */
 }
 
 nav ul li a:hover {
     color: #0f0;
-    background-color: rgba(0, 255, 0, 0.1);
+    background-color: transparent; /* Rimuove lo sfondo al passaggio del mouse */
     transform: translateY(-2px);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #0f0;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+nav ul li a:hover::after {
+    width: 80%; /* Sottolineatura che appare al passaggio del mouse */
 }
 
 nav ul li a.active {
     color: #0f0;
-    border-bottom: 2px solid #0f0;
+    border-bottom: none; /* Rimuove il bordo inferiore */
+}
+
+nav ul li a.active::after {
+    width: 80%; /* Sottolineatura per il link attivo */
+    background-color: #0f0;
+    box-shadow: 0 0 5px #0f0; /* Leggero bagliore */
 }
 
 /* Hamburger menu per mobile */
@@ -259,6 +326,47 @@ nav ul li a.active {
     margin-bottom: 30px;
 }
 
+/* Miglioramento pulsanti YouTube */
+.btn-youtube {
+    display: inline-block;
+    background-color: #ff0000;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 20px 0;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
+}
+
+.btn-youtube:hover {
+    transform: translateY(-5px);
+    background-color: #cc0000;
+    box-shadow: 0 6px 12px rgba(255, 0, 0, 0.5);
+}
+
+.btn-youtube i {
+    margin-right: 10px;
+    font-size: 1.3em;
+    vertical-align: middle;
+}
+
+.youtube-channel-link-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin: 40px 0;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.1);
+}
+
+.youtube-channel-link-container p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
 .video-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -330,18 +438,45 @@ nav ul li a.active {
     margin-top: 10px;
 }
 
-/* Stile per il footer */
+/* Footer Styles */
 footer {
+    background-color: #0a0a0a; /* Sfondo leggermente diverso per distinguerlo */
+    color: #0f0; /* Testo verde Matrix */
     text-align: center;
-    padding: 30px 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    margin-top: 50px;
-    border-top: 1px solid #0f0;
+    padding: 20px 0;
+    border-top: 1px solid #0f0; /* Bordo superiore verde */
+    margin-top: 40px; /* Spazio sopra il footer */
+    font-family: 'Courier New', Courier, monospace; /* Font a tema */
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 footer p {
-    color: #ccc;
+    margin: 5px 0;
+    font-size: 0.9em;
 }
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a {
+    color: #0f0;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer .social-links a:hover {
+    color: #fff; /* Bianco al passaggio del mouse */
+    transform: scale(1.1); /* Leggero ingrandimento */
+}
+
+
 
 /* Stile per i link */
 a {
@@ -392,12 +527,64 @@ a:hover {
         text-align: center;
     }
     
-    nav ul li a {
-        padding: 12px;
-        width: 100%;
-    }
-    
     nav ul li a:hover {
         background-color: rgba(0, 255, 0, 0.2);
     }
 }
+/* Miglioramento pulsanti generali */
+.btn {
+    display: inline-block;
+    background-color: rgba(0, 255, 0, 0.2);
+    color: #0f0;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid #0f0;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: rgba(0, 255, 0, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.5);
+}
+
+/* Add padding to main content to prevent it from being hidden under sticky navbar */
+main.container {
+    padding-top: 100px; /* Increased padding to ensure navbar doesn't overlap */
+}
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the file is double quoted). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.
+
+# VSCode Visible Files
+css/style.css
+
+# VSCode Open Tabs
+musical.html
+js/matrix-effect.js
+img/logo.svg
+video.txt
+js/app.js
+index.html
+musica.html
+stampa3d.html
+software.html
+css/style.css
+
+# Recently Modified Files
+These files have been modified since you last accessed them (file was just edited so you may need to re-read it before editing):
+css/style.css
+
+# Current Time
+5/9/2025, 11:50:46 PM (Europe/Rome, UTC+2:00)
+
+# Context Window Usage
+205,807 / 1,048.576K tokens used (20%)
+
+# Current Mode
+ACT MODE
+</environment_details>

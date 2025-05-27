@@ -33,6 +33,7 @@
             </div>
             <ul id="nav-menu">
                 <li><a href="#" class="active">Home</a></li>
+                <li><a href="#projects">Progetti</a></li>
                 <li><a href="stampa3d.html">Stampa 3D</a></li>
                 <li><a href="software.html">Software AI</a></li>
                 <li><a href="musica.html">Produzioni Musicali</a></li>
@@ -56,9 +57,9 @@
             <!-- Software AI -->
             <div id="software" class="service-card">
                 <i class="fas fa-robot"></i>
-                <h3>Software AI per Locali</h3>
-                <p>Sviluppo soluzioni software basate sull'intelligenza artificiale per migliorare l'esperienza nei locali. Dalla gestione delle prenotazioni all'analisi dei dati, le mie soluzioni aiutano a ottimizzare i processi e migliorare il servizio.</p>
-                <p>Ogni software è personalizzato in base alle specifiche esigenze del cliente.</p>
+                <h3>Software AI</h3>
+                <p>Sviluppo e implemento soluzioni software basate sull'intelligenza artificiale che operano completamente in locale, senza necessità di connessione internet. Questi strumenti sono progettati per sfruttare la potenza del tuo PC, garantendo privacy totale e controllo completo sui tuoi dati.</p>
+                <p>Ogni installazione è personalizzata per massimizzare le prestazioni sul tuo hardware specifico e soddisfare le tue esigenze professionali o personali.</p>
                 <a href="software.html" class="btn">Scopri di più</a>
             </div>
 
@@ -72,6 +73,53 @@
             </div>
         </div>
 
+        <!-- Sezione Progetti in Evidenza -->
+        <section id="projects" class="projects-showcase">
+            <h2><i class="fas fa-star"></i> Progetti in Evidenza</h2>
+            <p class="projects-intro">Ecco alcuni dei miei progetti più significativi che dimostrano le mie competenze in diversi ambiti tecnologici.</p>
+            
+            <div class="projects-grid">
+                <!-- Progetto DaProdMail -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <h3>DaProdMail</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">Soluzione completa per la gestione email con intelligenza artificiale integrata. Permette di gestire clienti, organizzarli in categorie e inviare email personalizzate con il supporto dell'AI per migliorare i testi di marketing.</p>
+                        
+                        <div class="project-features">
+                            <h4>Caratteristiche principali:</h4>
+                            <ul>
+                                <li>Gestione avanzata clienti e categorie</li>
+                                <li>AI integrata per miglioramento testi</li>
+                                <li>Interfaccia moderna con Next.js e TypeScript</li>
+                                <li>Funzionamento completamente offline</li>
+                                <li>Integrazione con Gmail e Google AI</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="project-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Tailwind CSS</span>
+                            <span class="tech-tag">Google AI</span>
+                        </div>
+                        
+                        <div class="project-links">
+                            <a href="https://github.com/cammo22/DaProdMail" target="_blank" class="btn btn-secondary">
+                                <i class="fab fa-github"></i> Codice Sorgente
+                            </a>
+                            <a href="https://studio--daprodmail-crifs.us-central1.hosted.app/" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-external-link-alt"></i> Demo Live
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Sezione Chi Sono -->
         <section id="about" class="about">
             <div class="about-img">
@@ -79,8 +127,8 @@
             </div>
             <div class="about-text">
                 <h2>Chi Sono</h2>
-                <p>Ciao, sono Cammo, classe '96, un appassionato di tecnologia di Napoli. La mia passione per l'innovazione mi ha portato a esplorare diversi campi tecnologici, dalla stampa 3D allo sviluppo di software AI, fino alla produzione musicale e video.</p>
-                <p>Attraverso questo portfolio, voglio condividere con voi i miei progetti e le mie competenze, mostrando come la tecnologia possa essere utilizzata in modi creativi e innovativi.</p>
+                <p>Ciao, sono Cammo, classe '96, un appassionato di tecnologia di Napoli. La mia passione per l'innovazione mi ha portato a esplorare diversi campi tecnologici: dalla stampa 3D allo sviluppo di software AI, fino alla produzione musicale e video.</p>
+                <p>Attraverso questo portfolio, condivido con voi i miei progetti e le mie competenze, dimostrando come la tecnologia possa essere utilizzata in modi creativi e innovativi per risolvere problemi reali e creare valore.</p>
             </div>
         </section>
     </main>
@@ -88,84 +136,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2023 DaProdProduzioni. Tutti i diritti riservati.</p>
+            <p>&copy; 2025 DaProdProduzioni. Tutti i diritti riservati.</p>
+            <p>Realizzato con passione e codice.</p>
+            <div class="social-links">
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <!-- Aggiungi altri link social se necessario -->
+            </div>
         </div>
     </footer>
 
     <!-- Script per l'effetto Matrix -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const matrixBg = document.getElementById('matrix-bg');
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            const fontSize = 14;
-            const columns = Math.floor(width / fontSize);
-            
-            // Caratteri Matrix
-            const matrixChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
-            
-            // Array per tenere traccia della posizione Y di ogni colonna
-            const drops = [];
-            for (let i = 0; i < columns; i++) {
-                drops[i] = 1;
-            }
-            
-            // Funzione per creare l'effetto pioggia Matrix
-            function drawMatrix() {
-                // Pulisci il contenitore
-                matrixBg.innerHTML = '';
-                
-                // Crea elementi per ogni carattere
-                for (let i = 0; i < columns; i++) {
-                    if (Math.random() > 0.98) { // Probabilità di far cadere un nuovo carattere
-                        const char = document.createElement('div');
-                        char.className = 'matrix-rain';
-                        char.style.left = i * fontSize + 'px';
-                        char.style.top = drops[i] * fontSize + 'px';
-                        char.textContent = matrixChars[Math.floor(Math.random() * matrixChars.length)];
-                        matrixBg.appendChild(char);
-                        
-                        // Incrementa la posizione Y
-                        drops[i]++;
-                        
-                        // Rimuovi il carattere dopo un po'
-                        setTimeout(() => {
-                            if (char.parentNode === matrixBg) {
-                                matrixBg.removeChild(char);
-                            }
-                        }, 2000);
-                        
-                        // Resetta la posizione Y se raggiunge il fondo
-                        if (drops[i] * fontSize > height && Math.random() > 0.95) {
-                            drops[i] = 0;
-                        }
-                    }
-                }
-            }
-            
-            // Esegui l'animazione
-            setInterval(drawMatrix, 100);
-        });
-        
-        // Script per il menu mobile
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navMenu = document.getElementById('nav-menu');
-            
-            mobileMenu.addEventListener('click', function() {
-                navMenu.classList.toggle('show');
-                mobileMenu.classList.toggle('active');
-            });
-            
-            // Chiudi il menu quando si clicca su un link
-            const navLinks = document.querySelectorAll('#nav-menu a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('show');
-                    mobileMenu.classList.remove('active');
-                });
-            });
-        });
-    </script>
+    <script src="js/matrix-effect.js"></script>
+    <!-- Script per la logica generale dell'app (menu mobile, rivela telefono, caricamento video, ecc.) -->
+    <script src="js/app.js"></script>
 </body>
 </html>
