@@ -1,185 +1,127 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Logica per il Menu Mobile ---
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.getElementById('nav-menu');
+// ── MATRIX RAIN ──
+(function(){
+  const c=document.getElementById('mx'), x=c.getContext('2d');
+  const ch='アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789@#$%';
+  const fs=13; let d=[];
+  function resize(){ c.width=innerWidth; c.height=innerHeight; d=Array.from({length:Math.floor(c.width/fs)},()=>Math.random()*c.height/fs); }
+  function draw(){ x.fillStyle='rgba(0,0,0,.055)'; x.fillRect(0,0,c.width,c.height); x.fillStyle='#00ff41'; x.font=fs+'px monospace'; d.forEach((v,i)=>{ x.fillText(ch[Math.floor(Math.random()*ch.length)],i*fs,v*fs); if(v*fs>c.height&&Math.random()>.975)d[i]=0; d[i]++; }); }
+  resize(); window.addEventListener('resize',resize); setInterval(draw,48);
+})();
 
-    if (mobileMenu && navMenu) {
-        mobileMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('show');
-            mobileMenu.classList.toggle('active');
-        });
+// ── TYPEWRITER ──
+(function(){
+  const words=['Stampa 3D','Software AI','Produzioni Musicali'];
+  const el=document.getElementById('tw');
+  let wi=0,ci=0,del=false;
+  function tick(){
+    const w=words[wi];
+    del ? ci-- : ci++;
+    el.textContent=w.slice(0,ci);
+    if(!del&&ci===w.length){ del=true; setTimeout(tick,1800); return; }
+    if(del&&ci===0){ del=false; wi=(wi+1)%words.length; }
+    setTimeout(tick,del?45:80);
+  }
+  setTimeout(tick,400);
+})();
 
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (navMenu.classList.contains('show')) {
-                    navMenu.classList.remove('show');
-                    mobileMenu.classList.remove('active');
-                }
-            });
-        });
-    }
+// ── SCROLL: progress + nav shadow + back-to-top ──
+(function(){
+  const bar=document.getElementById('prog'), nav=document.getElementById('nav'), btt=document.getElementById('btt');
+  window.addEventListener('scroll',()=>{
+    const s=scrollY, t=document.documentElement.scrollHeight-innerHeight;
+    bar.style.width=(s/t*100)+'%';
+    nav.style.boxShadow=s>30?'0 2px 20px rgba(0,255,65,.08)':'none';
+    btt.classList.toggle('on',s>400);
+  },{passive:true});
+  btt.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+})();
 
-    // --- Logica per la gestione del numero di telefono ---
-    const phoneNumberEl = document.getElementById('phone-number');
-    const revealButtonEl = document.getElementById('reveal-phone');
-    const whatsappLinkEl = document.getElementById('whatsapp-link');
-    const realPhoneNumberVal = "334-827-8543";
+// ── HAMBURGER ──
+(function(){
+  const h=document.getElementById('hbg'), m=document.getElementById('mn');
+  h.addEventListener('click',()=>{ h.classList.toggle('on'); m.classList.toggle('on'); });
+  m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ h.classList.remove('on'); m.classList.remove('on'); }));
+})();
 
-    if (revealButtonEl && phoneNumberEl && whatsappLinkEl) {
-        revealButtonEl.addEventListener('click', function() {
-            phoneNumberEl.textContent = realPhoneNumberVal;
-            phoneNumberEl.style.color = '#0f0';
-            revealButtonEl.style.display = 'none';
-            whatsappLinkEl.style.display = 'inline-block';
-            phoneNumberEl.style.cursor = 'pointer';
-            phoneNumberEl.addEventListener('click', function() {
-                window.open(`https://wa.me/39${realPhoneNumberVal.replace(/-/g, '')}`, '_blank');
-            });
-        });
-    }
+// ── SMOOTH SCROLL + ACTIVE NAV ──
+(function(){
+  const NH=58;
+  document.addEventListener('click',e=>{
+    const a=e.target.closest('a[href^="#"]');
+    if(!a)return;
+    const t=document.querySelector(a.getAttribute('href'));
+    if(!t)return;
+    e.preventDefault();
+    scrollTo({top:t.getBoundingClientRect().top+scrollY-NH-8,behavior:'smooth'});
+  });
+  const secs=[...document.querySelectorAll('section[id]')];
+  const links=[...document.querySelectorAll('#nl li a, #mn a')];
+  function setAct(){
+    let cur='';
+    secs.forEach(s=>{ if(s.getBoundingClientRect().top<=NH+100)cur=s.id; });
+    links.forEach(l=>l.classList.toggle('act',l.getAttribute('href')==='#'+cur));
+  }
+  window.addEventListener('scroll',setAct,{passive:true}); setAct();
+})();
 
-    // --- Logica per caricare i video da video.txt (specifico per musica.html) ---
-    function extractVideoId(url) {
-        const regex = /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-        const matches = url.match(regex);
-        return matches ? matches[1] : null;
-    }
+// ── SCROLL REVEAL ──
+(function(){
+  const obs=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);} }),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+})();
 
-    function addYouTubeChannelLinkToPage(targetContainer) {
-        if (!targetContainer || !targetContainer.parentNode) {
-            console.warn('Contenitore non valido per il link al canale YouTube.');
-            return;
-        }
+// ── REVEAL PHONE ──
+(function(){
+  const PH='+39 379 307 2693';
+  document.querySelectorAll('.rph').forEach(b=>b.addEventListener('click',function(){
+    const ph=document.getElementById(this.dataset.t), wp=document.getElementById(this.dataset.w), n=document.getElementById(this.dataset.n);
+    if(ph){ph.textContent=PH; ph.style.color='#00ff41';}
+    this.style.display='none';
+    if(wp)wp.style.display='inline-block';
+    if(n)n.style.display='block';
+  }));
+})();
 
-        const existingChannelLink = document.querySelector('.youtube-channel-link-container');
-        if (existingChannelLink) {
-            existingChannelLink.remove();
-        }
+// ── YOUTUBE VIDEOS ──
+(function(){
+  const grid=document.getElementById('vgrid');
+  const FB=['jexuwfBA0Fo','mXyZzCB0ba8','XYIkNkon4gQ','RhjZHy90jSk','rtN5PTFfWzU','b0xwUUtLY1A'];
 
-        const channelLinkDiv = document.createElement('div');
-        channelLinkDiv.className = 'youtube-channel-link-container text-center';
-        channelLinkDiv.style.marginTop = '30px';
-        channelLinkDiv.innerHTML = `
-            <p>Scopri tutte le nostre produzioni musicali visitando il nostro canale YouTube:</p>
-            <a href="https://www.youtube.com/@DaProdMusica/videos" target="_blank" class="btn btn-youtube">
-                <i class="fab fa-youtube fa-lg"></i> Visita il Canale DaProdMusica
-            </a>
-            <p style="font-size: 0.9em; margin-top: 15px;">Tutti i video sono realizzati con software open source e generati offline.</p>
-        `;
-        targetContainer.parentNode.insertBefore(channelLinkDiv, targetContainer.nextSibling);
-    }
+  // Inserisci qui l'ID del tuo canale per aggiornamento automatico dei video
+  // Per trovarlo: youtube.com/@DaProdMusica → Altro → Condividi → cerca "channel/"
+  const CH_ID=''; // es: 'UCxxxxxxxxxxxxxxxxxxxxxxx'
 
-    // Fallback con video hardcoded
-    function loadVideosFromArray() {
-        const videoIds = [
-            'jexuwfBA0Fo',
-            'mXyZzCB0ba8', 
-            'XYIkNkon4gQ',
-            'RhjZHy90jSk',
-            'rtN5PTFfWzU',
-            'b0xwUUtLY1A'
-        ];
-        
-        const videoContainer = document.getElementById('playlist-container');
-        if (!videoContainer) return;
-        
-        videoContainer.innerHTML = '';
-        
-        videoIds.forEach(videoId => {
-            const videoElement = document.createElement('div');
-            videoElement.className = 'video-item';
-            videoElement.innerHTML = `
-                <iframe
-                    src="https://www.youtube.com/embed/${videoId}"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen
-                    title="Video YouTube ${videoId}"></iframe>
-            `;
-            videoContainer.appendChild(videoElement);
-        });
+  function getId(url){ const m=(url||'').match(/(?:youtu\.be\/|youtube\.com\/(?:.*[?&]v=|embed\/|v\/|shorts\/))([a-zA-Z0-9_-]{11})/); return m?m[1]:null; }
 
-        addYouTubeChannelLinkToPage(videoContainer);
-    }
-
-    async function loadVideos() {
-        const videoContainer = document.getElementById('playlist-container');
-        if (!videoContainer) {
-            return;
-        }
-
-        try {
-            // Prova a caricare i video dal file video.txt
-            const response = await fetch('video.txt');
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const videoText = await response.text();
-            const videoUrls = videoText.split('\n').filter(url => url.trim() !== '');
-            
-            videoContainer.innerHTML = '';
-
-            if (videoUrls.length === 0) {
-                throw new Error('Nessun video trovato nel file');
-            }
-
-            let validVideos = 0;
-            videoUrls.forEach(url => {
-                const videoId = extractVideoId(url.trim());
-                if (videoId) {
-                    const videoElement = document.createElement('div');
-                    videoElement.className = 'video-item';
-                    videoElement.innerHTML = `
-                        <iframe
-                            src="https://www.youtube.com/embed/${videoId}"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen
-                            title="Video YouTube ${videoId}"></iframe>
-                    `;
-                    videoContainer.appendChild(videoElement);
-                    validVideos++;
-                } else {
-                    console.warn('URL video non valido:', url);
-                }
-            });
-
-            if (validVideos === 0) {
-                throw new Error('Nessun video valido trovato');
-            }
-
-            addYouTubeChannelLinkToPage(videoContainer);
-            
-        } catch (error) {
-            console.error('Errore nel caricamento dei video dal file:', error);
-            console.log('Caricamento video da array di fallback...');
-            
-            // Usa il fallback con video hardcoded
-            loadVideosFromArray();
-        }
-    }
-
-    // Call loadVideos only if the playlist container exists on the page
-    if (document.getElementById('playlist-container')) {
-        loadVideos();
-    }
-
-    // --- Smooth scrolling per i link interni ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return; // Skip empty anchors
-            
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+  function render(ids){
+    if(!ids?.length)ids=FB;
+    grid.innerHTML='';
+    ids.forEach(id=>{
+      const d=document.createElement('div'); d.className='vw rv';
+      d.innerHTML=`
+        <a href="https://www.youtube.com/watch?v=${id}" target="_blank" class="vlink">
+          <img src="https://img.youtube.com/vi/${id}/hqdefault.jpg" alt="Video Thumbnail" loading="lazy">
+          <div class="vplay">
+            <div class="vplay-inner">
+              <i class="fas fa-play"></i>
+              <span>Guarda su YouTube</span>
+            </div>
+          </div>
+        </a>`;
+      grid.appendChild(d);
     });
-});
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target);}}),{threshold:.1});
+    grid.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+    document.querySelector('.ytbox')?.remove();
+    const box=document.createElement('div'); box.className='ytbox rv';
+    box.innerHTML=`<p>Scopri tutte le produzioni sul canale YouTube:</p><a href="https://www.youtube.com/@DaProdMusica/videos" target="_blank" class="btnyt"><i class="fab fa-youtube"></i> Visita DaProdMusica</a><p style="font-size:.8em;color:#2d4a2d;margin-top:10px">Ogni produzione realizzata interamente offline con software open source.</p>`;
+    grid.parentNode.insertBefore(box,grid.nextSibling);
+    obs.observe(box);
+  }
+
+  function fromRSS(ch){ return fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id='+ch)}&count=12`).then(r=>r.json()).then(d=>{ if(d.status!=='ok'||!d.items?.length)throw 0; const ids=d.items.map(i=>getId(i.link||i.guid)).filter(Boolean); if(!ids.length)throw 0; return ids; }); }
+  function fromTxt(){ return fetch('video.txt').then(r=>{if(!r.ok)throw 0;return r.text();}).then(t=>{ const ids=t.split('\n').map(l=>getId(l.trim())).filter(Boolean); if(!ids.length)throw 0; return ids; }); }
+
+  (CH_ID ? fromRSS(CH_ID).catch(fromTxt) : fromTxt()).catch(()=>FB).then(render);
+})();

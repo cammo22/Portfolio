@@ -1,156 +1,277 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DaProdProduzioni - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>DaProdProduzioni — Portfolio</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Sfondo Matrix -->
-    <div class="matrix-bg" id="matrix-bg"></div>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <h1>DaProdProduzioni</h1>
-            <p>Stampa 3D | Software AI | Produzioni Musicali</p>
+<div id="prog"></div>
+<canvas id="mx"></canvas>
+<button id="btt"><i class="fas fa-chevron-up"></i></button>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container">
+    <a href="#hero" class="logo">
+      <img src="img/logo.svg" alt="DPP">
+      <span>DaProdProduzioni</span>
+    </a>
+    <ul id="nl">
+      <li><a href="#hero" class="act">Home</a></li>
+      <li><a href="#projects">Progetti</a></li>
+      <li><a href="#musica">Musica</a></li>
+      <li><a href="#stampa3d">Stampa 3D</a></li>
+      <li><a href="#software">Software AI</a></li>
+      <li><a href="#about">Chi sono</a></li>
+    </ul>
+    <button id="hbg"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div id="mn">
+  <ul>
+    <li><a href="#hero" class="act">Home</a></li>
+    <li><a href="#projects">Progetti</a></li>
+    <li><a href="#musica">Produzioni Musicali</a></li>
+    <li><a href="#stampa3d">Stampa 3D</a></li>
+    <li><a href="#software">Software AI</a></li>
+    <li><a href="#about">Chi sono</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <p class="hpre">// daprodproduzioni.github.io</p>
+    <div class="tw"><span id="tw"></span><span id="cur"></span></div>
+    <p class="hsub">Napoli &middot; Tecnologia &middot; Creativit&agrave;</p>
+    <div class="hstats">
+      <div class="stat"><span class="n">3+</span><span class="l">Anni di esperienza</span></div>
+      <div class="stat"><span class="n">10+</span><span class="l">Progetti completati</span></div>
+      <div class="stat"><span class="n">3</span><span class="l">Specializzazioni</span></div>
+    </div>
+  </div>
+  <div class="sclue"><span>SCROLL</span><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- SERVIZI -->
+<section class="sec" id="services">
+  <div class="container">
+    <div class="sgrid">
+      <a href="#projects" class="sc rv d1">
+        <div class="ic"><i class="fas fa-star"></i></div>
+        <h3>Progetti</h3>
+        <p>Software e strumenti sviluppati con tecnologie moderne e open source.</p>
+        <span class="arr">Scopri <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="#musica" class="sc rv d2">
+        <div class="ic"><i class="fas fa-music"></i></div>
+        <h3>Produzioni Musicali</h3>
+        <p>Musica originale prodotta esclusivamente con software open source, 100% offline.</p>
+        <span class="arr">Guarda i video <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="#stampa3d" class="sc rv d3">
+        <div class="ic"><i class="fas fa-cube"></i></div>
+        <h3>Stampa 3D</h3>
+        <p>Modelli personalizzati e prototipi con tecnologia di stampa FDM.</p>
+        <span class="arr">Scopri <i class="fas fa-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROGETTI -->
+<section class="sec" id="projects">
+  <div class="container">
+    <div class="sh rv">
+      <p class="stag">// 01 &mdash; Progetti</p>
+      <h2><i class="fas fa-star"></i> Progetti in Evidenza</h2>
+      <p>I progetti pi&ugrave; significativi che dimostrano competenze in diversi ambiti tecnologici.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pc rv">
+        <div class="pct">
+          <i class="fas fa-envelope-open-text"></i>
+          <h3>DaProdMail</h3>
+          <span class="badge">Open Source</span>
         </div>
-    </header>
-
-    <!-- Navigazione -->
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="img/logo.svg" alt="DPP Logo">
-                <span class="logo-text">DaProdProduzioni</span>
-            </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul id="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#projects">Progetti</a></li>
-                <li><a href="stampa3d.html">Stampa 3D</a></li>
-                <li><a href="software.html">Software AI</a></li>
-                <li><a href="musica.html">Produzioni Musicali</a></li>
-            </ul>
+        <div class="pb">
+          <p>Gestione email con intelligenza artificiale integrata. Organizza clienti, categorie e testi di marketing con supporto AI, funzionando completamente offline.</p>
+          <ul class="fl">
+            <li>Gestione avanzata clienti e categorie</li>
+            <li>AI integrata per il miglioramento dei testi</li>
+            <li>Interfaccia Next.js + TypeScript moderna</li>
+            <li>Funzionamento completamente offline</li>
+            <li>Integrazione Gmail e Google AI</li>
+          </ul>
+          <div class="tt">
+            <span>Next.js</span><span>TypeScript</span><span>React</span><span>Tailwind</span><span>Google AI</span>
+          </div>
+          <div class="pl">
+            <a href="https://github.com/cammo22/DaProdMail" target="_blank" class="btn btng"><i class="fab fa-github"></i> Codice</a>
+            <a href="https://studio--daprodmail-crifs.us-central1.hosted.app/" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Demo Live</a>
+          </div>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Contenuto principale -->
-    <main class="container">
-        <!-- Sezione Servizi -->
-        <div class="services">
-            <!-- Stampa 3D -->
-            <div id="stampa3d" class="service-card">
-                <i class="fas fa-cube"></i>
-                <h3>Stampa 3D</h3>
-                <p>Realizzo modelli 3D personalizzati e li porto alla vita attraverso la stampa 3D. Dai prototipi ai prodotti finiti, offro soluzioni creative e funzionali per le tue esigenze.</p>
-                <p>Utilizzo tecnologie all'avanguardia per garantire la massima qualità e precisione nei dettagli.</p>
-                <a href="stampa3d.html" class="btn">Scopri di più</a>
-            </div>
+<!-- MUSICA -->
+<section class="sec" id="musica">
+  <div class="container">
+    <div class="sh rv">
+      <p class="stag">// 02 &mdash; Produzioni Musicali</p>
+      <h2><i class="fas fa-music"></i> Produzioni Musicali</h2>
+    </div>
+    <div class="phi rv">
+      <p>Ogni brano viene realizzato <strong>esclusivamente con software open source</strong>, generato <strong>completamente offline</strong> sfruttando la potenza del PC. Nessun servizio cloud, nessuno strumento proprietario &egrave; coinvolto nel processo creativo.</p>
+      <p>Questa scelta dimostra che con gli strumenti giusti &egrave; possibile raggiungere <strong>qualsiasi livello di qualit&agrave;</strong>. Esplora i video qui sotto e scopri cosa nasce da passione, tecnologia libera e tanta cura nel suono.</p>
+    </div>
+    <div id="vgrid" class="vgrid">
+      <div class="loading"><i class="fas fa-circle-notch fa-spin"></i> Caricamento video&hellip;</div>
+    </div>
+    <div class="cb rv">
+      <h3>Collabora con Me</h3>
+      <p>Sei interessato a un progetto musicale? Scrivimi.</p>
+      <div class="cr">
+        <p><i class="fas fa-envelope"></i><a href="mailto:dapprod22@gmail.com">dapprod22@gmail.com</a><a href="mailto:dapprod22@gmail.com" class="bsm"><i class="fas fa-envelope"></i> Scrivi</a></p>
+        <p><i class="fas fa-phone"></i><span id="ph-mu">XXX-XXX-XXXX</span><button class="bsm rph" data-t="ph-mu" data-w="wp-mu" data-n="note-mu">Mostra</button><a id="wp-mu" href="https://wa.me/393793072693?text=Ciao!%20Sono%20interessato%20alle%20produzioni%20musicali%20e%20vorrei%20piu%20informazioni." target="_blank" style="display:none" class="bsm"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</a></p>
+        <p id="note-mu" class="wpn"><i class="fab fa-whatsapp"></i>Ti risponder&agrave; un <strong style="color:#5a9a5a">operatore virtuale</strong> &mdash; invia <strong style="color:#5a9a5a">"Ciao!"</strong> per ricevere subito tutte le informazioni.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Software AI -->
-            <div id="software" class="service-card">
-                <i class="fas fa-robot"></i>
-                <h3>Software AI</h3>
-                <p>Sviluppo e implemento soluzioni software basate sull'intelligenza artificiale che operano completamente in locale, senza necessità di connessione internet. Questi strumenti sono progettati per sfruttare la potenza del tuo PC, garantendo privacy totale e controllo completo sui tuoi dati.</p>
-                <p>Ogni installazione è personalizzata per massimizzare le prestazioni sul tuo hardware specifico e soddisfare le tue esigenze professionali o personali.</p>
-                <a href="software.html" class="btn">Scopri di più</a>
-            </div>
+<!-- STAMPA 3D -->
+<section class="sec" id="stampa3d">
+  <div class="container">
+    <div class="sh rv">
+      <p class="stag">// 03 &mdash; Stampa 3D</p>
+      <h2><i class="fas fa-cube"></i> Stampa 3D</h2>
+      <p>Trasformo idee in oggetti reali con stampa FDM di precisione e materiali selezionati.</p>
+    </div>
+    <div class="fgrid">
+      <div class="fc rv d1">
+        <div class="fi"><i class="fas fa-drafting-compass"></i></div>
+        <h3>Modellazione 3D</h3>
+        <p>Modelli personalizzati con Fusion 360, Blender e SolidWorks. Da uno schizzo a un modello preciso e funzionale.</p>
+      </div>
+      <div class="fc rv d2">
+        <div class="fi"><i class="fas fa-bolt"></i></div>
+        <h3>Prototipazione Rapida</h3>
+        <p>Prototipi funzionali in tempi rapidi per testare e perfezionare il design prima di procedere con la stampa definitiva.</p>
+      </div>
+      <div class="fc rv d3">
+        <div class="fi"><i class="fas fa-layer-group"></i></div>
+        <h3>Stampa FDM</h3>
+        <p>Stampa con tecnologia FDM su materiali PLA, PETG e ABS in base alla resistenza e alla finitura richiesta. Ogni pezzo controllato prima della consegna.</p>
+      </div>
+    </div>
+    <div class="cb rv">
+      <h3>Contattami per la Stampa 3D</h3>
+      <p>Preventivo gratuito e senza impegno. Parliamo del tuo progetto.</p>
+      <div class="cr">
+        <p><i class="fas fa-envelope"></i><a href="mailto:dapprod22@gmail.com">dapprod22@gmail.com</a><a href="mailto:dapprod22@gmail.com" class="bsm"><i class="fas fa-envelope"></i> Scrivi</a></p>
+        <p><i class="fas fa-phone"></i><span id="ph-3d">XXX-XXX-XXXX</span><button class="bsm rph" data-t="ph-3d" data-w="wp-3d" data-n="note-3d">Mostra</button><a id="wp-3d" href="https://wa.me/393793072693?text=Ciao!%20Sono%20interessato%20alla%20stampa%203D%20e%20vorrei%20piu%20informazioni." target="_blank" style="display:none" class="bsm"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</a></p>
+        <p id="note-3d" class="wpn"><i class="fab fa-whatsapp"></i>Ti risponder&agrave; un <strong style="color:#5a9a5a">operatore virtuale</strong> &mdash; invia <strong style="color:#5a9a5a">"Ciao!"</strong> per ricevere subito tutte le informazioni.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <!-- Produzioni Musicali -->
-            <div id="musica" class="service-card">
-                <i class="fas fa-music"></i>
-                <h3>Produzioni Musicali</h3>
-                <p>Compongo e produco musica originale per vari progetti. Dal mio canale YouTube DaProdMusica, condivido le mie creazioni e collaboro con artisti per dare vita a progetti musicali unici.</p>
-                <p>Scopri di più nella sezione dedicata alle produzioni musicali.</p>
-                <a href="musica.html" class="btn">Visualizza i miei video</a>
-            </div>
+<!-- SOFTWARE AI -->
+<section class="sec" id="software">
+  <div class="container">
+    <div class="sh rv">
+      <p class="stag">// 04 &mdash; Software AI</p>
+      <h2><i class="fas fa-robot"></i> Software AI</h2>
+      <p>Privacy totale, zero abbonamenti, tutto il controllo nelle tue mani.</p>
+    </div>
+    <div class="swc rv">
+      <h3><i class="fas fa-paint-brush"></i> Krita &mdash; Alternativa Open Source a Photoshop</h3>
+      <p>Software di grafica professionale, gratuito e open source. Con modelli AI integrati puoi generare, modificare e trasformare immagini direttamente sul tuo PC, senza mai connettersi a internet.</p>
+      <span class="swlb">Funzionalit&agrave; AI</span>
+      <ul class="swl">
+        <li><strong>Generazione immagini</strong> &mdash; da descrizione testuale</li>
+        <li><strong>Rimozione elementi</strong> &mdash; elimina oggetti o persone</li>
+        <li><strong>Trasformazione stili</strong> &mdash; converti in stili artistici</li>
+        <li><strong>Modifica pose</strong> &mdash; riposiziona i soggetti</li>
+        <li><strong>Colorazione B&amp;N</strong> &mdash; colore realistico su foto vintage</li>
+        <li><strong>Civitai.com</strong> &mdash; migliaia di modelli compatibili</li>
+      </ul>
+    </div>
+    <div class="swc rv">
+      <h3><i class="fas fa-robot"></i> Pinokio &mdash; Suite AI con Installazione a Un Click</h3>
+      <p>Piattaforma che raccoglie i migliori strumenti AI installabili con un click. Nessuna configurazione, nessuna competenza tecnica richiesta.</p>
+      <span class="swlb">Vantaggi</span>
+      <ul class="swl">
+        <li><strong>Installazione click</strong> &mdash; nessuna configurazione complessa</li>
+        <li><strong>Ampia gamma</strong> &mdash; testo, immagini, video, audio</li>
+        <li><strong>Interfaccia unificata</strong> &mdash; gestisci tutto in un posto</li>
+        <li><strong>Aggiornamenti automatici</strong> &mdash; sempre all&rsquo;avanguardia</li>
+      </ul>
+    </div>
+    <div class="cb rv">
+      <h3>Contattami per il Software AI</h3>
+      <p>Consulenza gratuita per installazione e configurazione sul tuo hardware.</p>
+      <div class="cr">
+        <p><i class="fas fa-envelope"></i><a href="mailto:dapprod22@gmail.com">dapprod22@gmail.com</a><a href="mailto:dapprod22@gmail.com" class="bsm"><i class="fas fa-envelope"></i> Scrivi</a></p>
+        <p><i class="fas fa-phone"></i><span id="ph-sw">XXX-XXX-XXXX</span><button class="bsm rph" data-t="ph-sw" data-w="wp-sw" data-n="note-sw">Mostra</button><a id="wp-sw" href="https://wa.me/393793072693?text=Ciao!%20Sono%20interessato%20al%20software%20AI%20e%20vorrei%20piu%20informazioni." target="_blank" style="display:none" class="bsm"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</a></p>
+        <p id="note-sw" class="wpn"><i class="fab fa-whatsapp"></i>Ti risponder&agrave; un <strong style="color:#5a9a5a">operatore virtuale</strong> &mdash; invia <strong style="color:#5a9a5a">"Ciao!"</strong> per ricevere subito tutte le informazioni.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section class="sec" id="about">
+  <div class="container">
+    <div class="sh rv">
+      <p class="stag">// 05 &mdash; Chi sono</p>
+      <h2><i class="fas fa-user"></i> Chi Sono</h2>
+    </div>
+    <div class="ab rv">
+      <div class="ab-img">
+        <img src="img/fotoprofilo.JPG" alt="Cammo">
+      </div>
+      <div class="ab-txt">
+        <h2>Cammo</h2>
+        <p>Ciao, sono Cammo, classe &rsquo;96, un appassionato di tecnologia di Napoli. La mia passione per l&rsquo;innovazione mi ha portato a esplorare diversi campi: dalla stampa 3D allo sviluppo di software AI, fino alla produzione musicale e video.</p>
+        <p>Credo che la tecnologia debba essere libera, accessibile e creativa. Per questo mi concentro su soluzioni open source, offline e personalizzate, lontane dai grandi ecosistemi cloud.</p>
+        <div class="skrow">
+          <span class="sk">Stampa 3D</span>
+          <span class="sk">Software AI locale</span>
+          <span class="sk">Musica</span>
+          <span class="sk">Next.js</span>
+          <span class="sk">Python</span>
+          <span class="sk">Open Source</span>
+          <span class="sk">Napoli</span>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <!-- Sezione Progetti in Evidenza -->
-        <section id="projects" class="projects-showcase">
-            <h2><i class="fas fa-star"></i> Progetti in Evidenza</h2>
-            <p class="projects-intro">Ecco alcuni dei miei progetti più significativi che dimostrano le mie competenze in diversi ambiti tecnologici.</p>
-            
-            <div class="projects-grid">
-                <!-- Progetto DaProdMail -->
-                <div class="project-card">
-                    <div class="project-header">
-                        <i class="fas fa-envelope-open-text"></i>
-                        <h3>DaProdMail</h3>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">Soluzione completa per la gestione email con intelligenza artificiale integrata. Permette di gestire clienti, organizzarli in categorie e inviare email personalizzate con il supporto dell'AI per migliorare i testi di marketing.</p>
-                        
-                        <div class="project-features">
-                            <h4>Caratteristiche principali:</h4>
-                            <ul>
-                                <li>Gestione avanzata clienti e categorie</li>
-                                <li>AI integrata per miglioramento testi</li>
-                                <li>Interfaccia moderna con Next.js e TypeScript</li>
-                                <li>Funzionamento completamente offline</li>
-                                <li>Integrazione con Gmail e Google AI</li>
-                            </ul>
-                        </div>
-                        
-                        <div class="project-tech">
-                            <span class="tech-tag">Next.js</span>
-                            <span class="tech-tag">TypeScript</span>
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Tailwind CSS</span>
-                            <span class="tech-tag">Google AI</span>
-                        </div>
-                        
-                        <div class="project-links">
-                            <a href="https://github.com/cammo22/DaProdMail" target="_blank" class="btn btn-secondary">
-                                <i class="fab fa-github"></i> Codice Sorgente
-                            </a>
-                            <a href="https://studio--daprodmail-crifs.us-central1.hosted.app/" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-external-link-alt"></i> Demo Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 DaProdProduzioni &mdash; Tutti i diritti riservati.</p>
+    <p>Realizzato con passione e codice &mdash; Napoli, Italia.</p>
+    <div class="socrow">
+      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://github.com/cammo22" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
 
-        <!-- Sezione Chi Sono -->
-        <section id="about" class="about">
-            <div class="about-img">
-                <img src="img/fotoprofilo.JPG" alt="Cammo">
-            </div>
-            <div class="about-text">
-                <h2>Chi Sono</h2>
-                <p>Ciao, sono Cammo, classe '96, un appassionato di tecnologia di Napoli. La mia passione per l'innovazione mi ha portato a esplorare diversi campi tecnologici: dalla stampa 3D allo sviluppo di software AI, fino alla produzione musicale e video.</p>
-                <p>Attraverso questo portfolio, condivido con voi i miei progetti e le mie competenze, dimostrando come la tecnologia possa essere utilizzata in modi creativi e innovativi per risolvere problemi reali e creare valore.</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 DaProdProduzioni. Tutti i diritti riservati.</p>
-            <p>Realizzato con passione e codice.</p>
-            <div class="social-links">
-                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-                <!-- Aggiungi altri link social se necessario -->
-            </div>
-        </div>
-    </footer>
-
-    <!-- Script per l'effetto Matrix -->
-    <script src="js/matrix-effect.js"></script>
-    <!-- Script per la logica generale dell'app (menu mobile, rivela telefono, caricamento video, ecc.) -->
-    <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
