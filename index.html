@@ -5,26 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Cammo da Napoli: giochi nel browser, programmi AI che girano sul tuo PC, gestionali, musica e stampa 3D. Tutto il possibile open source e offline.">
-<meta name="theme-color" content="#5cc8f5">
+<meta name="theme-color" content="#020806">
 <title>DaProd — Cammo da Napoli</title>
 <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&family=Space+Mono:wght@400;700&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- cielo: sole, nuvole, nastri e bolle -->
+<!-- sfondo: aurora, nastri di luce, pioggia matrix, bolle -->
 <div class="sky" aria-hidden="true">
-  <div class="sun"></div>
-  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <div class="aura a1"></div><div class="aura a2"></div><div class="aura a3"></div>
   <svg class="swoosh" viewBox="0 0 1440 600" preserveAspectRatio="none">
-    <path d="M0 420 C 320 300, 620 520, 980 360 S 1440 260, 1440 260 L1440 330 C 1200 360, 1080 470, 860 470 S 300 360, 0 480 Z" fill="#fff" opacity=".35"/>
-    <path d="M0 470 C 360 380, 700 560, 1060 420 S 1440 360, 1440 360 L1440 380 C 1180 420, 1100 520, 860 520 S 320 420, 0 500 Z" fill="#fff" opacity=".5"/>
+    <defs>
+      <linearGradient id="sw1" x1="0" x2="1"><stop offset="0" stop-color="#00ff41" stop-opacity="0"/><stop offset=".5" stop-color="#3dff8a" stop-opacity=".22"/><stop offset="1" stop-color="#3ddbff" stop-opacity=".05"/></linearGradient>
+      <linearGradient id="sw2" x1="0" x2="1"><stop offset="0" stop-color="#3ddbff" stop-opacity=".05"/><stop offset=".6" stop-color="#3ddbff" stop-opacity=".2"/><stop offset="1" stop-color="#7c5cff" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path d="M0 420 C 320 300, 620 520, 980 360 S 1440 260, 1440 260 L1440 300 C 1200 340, 1080 450, 860 450 S 300 360, 0 460 Z" fill="url(#sw1)"/>
+    <path d="M0 480 C 360 390, 700 560, 1060 430 S 1440 370, 1440 370 L1440 382 C 1180 420, 1100 510, 860 510 S 320 420, 0 494 Z" fill="url(#sw2)"/>
   </svg>
 </div>
+<canvas id="mx" aria-hidden="true"></canvas>
 <canvas id="bubbles" aria-hidden="true"></canvas>
 
 <!-- NAV -->
@@ -54,10 +58,10 @@
 <section class="hero">
   <div class="wrap hero-in">
     <div class="hero-txt">
-      <p class="hello"><span class="dot"></span> ciao, sono Cammo &mdash; Napoli</p>
+      <p class="hello"><span class="dot"></span> // daprodproduzioni.github.io</p>
       <h1 class="chrome"><span class="c-top">DaProd</span><span class="c-bot">Produzioni</span></h1>
-      <p class="hero-line">Faccio <span id="tw" class="tw"></span><span class="caret"></span></p>
-      <p class="hero-sub">Giochi arcade che partono nel browser, programmi che girano sul tuo PC senza abbonamenti, musica fatta offline e oggetti stampati in 3D. Tutto il possibile open source.</p>
+      <p class="hero-line"><span class="pr">cammo@napoli:~$</span> faccio <span id="tw" class="tw"></span><span class="caret"></span></p>
+      <p class="hero-sub">Ciao, sono Cammo. Giochi arcade che partono nel browser, programmi che girano sul tuo PC senza abbonamenti, musica fatta offline e oggetti stampati in 3D. Tutto il possibile open source.</p>
       <div class="hero-btns">
         <a href="#progetti" class="aqua"><i class="fas fa-droplet"></i> Guarda i progetti</a>
         <a href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" class="aqua green"><i class="fas fa-play"></i> Gioca subito</a>
@@ -66,7 +70,7 @@
 
     <!-- gadget stile Vista -->
     <aside class="gadget glass" aria-label="Sul banco adesso">
-      <div class="gadget-bar"><i class="fas fa-circle"></i> sul banco adesso</div>
+      <div class="gadget-bar"><i></i> sul banco adesso</div>
       <a href="#p-suite" class="g-row"><span class="ico sm i-suite"><i class="fas fa-wand-magic-sparkles"></i></span><span><b>DaProd Suite</b><small>app AI in locale</small></span><em class="led on"></em></a>
       <a href="#p-finanza" class="g-row"><span class="ico sm i-fin"><i class="fas fa-chart-line"></i></span><span><b>DaProdFinanza</b><small>controllo di gestione</small></span><em class="led on"></em></a>
       <a href="#p-dozer" class="g-row"><span class="ico sm i-dozer"><i class="fas fa-coins"></i></span><span><b>Coin Dozer</b><small>arcade a tre piani</small></span><em class="led on"></em></a>
@@ -78,8 +82,8 @@
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-in">
-    <span>✦ 100% offline</span><span>✦ open source</span><span>✦ niente account</span><span>✦ si paga in lire ₤</span><span>✦ fatto a Napoli</span><span>✦ un file, zero installazioni</span><span>✦ gira sul tuo PC</span>
-    <span>✦ 100% offline</span><span>✦ open source</span><span>✦ niente account</span><span>✦ si paga in lire ₤</span><span>✦ fatto a Napoli</span><span>✦ un file, zero installazioni</span><span>✦ gira sul tuo PC</span>
+    <span>▸ 100% offline</span><span>▸ open source</span><span>▸ niente account</span><span>▸ si paga in lire ₤</span><span>▸ fatto a Napoli</span><span>▸ un file, zero installazioni</span><span>▸ gira sul tuo PC</span>
+    <span>▸ 100% offline</span><span>▸ open source</span><span>▸ niente account</span><span>▸ si paga in lire ₤</span><span>▸ fatto a Napoli</span><span>▸ un file, zero installazioni</span><span>▸ gira sul tuo PC</span>
   </div>
 </div>
 
@@ -87,7 +91,7 @@
 <section class="sec" id="progetti">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">✦ ultimi progetti</p>
+      <p class="kicker">// 01 &mdash; ultimi progetti</p>
       <h2>Cosa sto costruendo</h2>
       <p>Le cose su cui passo le notti. Due programmi veri, due giochi da provare adesso.</p>
     </div>
@@ -165,7 +169,7 @@
 <section class="sec" id="laboratorio">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">✦ dal laboratorio</p>
+      <p class="kicker">// 02 &mdash; laboratorio</p>
       <h2>Altre cose che ho fatto</h2>
       <p>Esperimenti, strumenti piccoli e siti fatti per chi me li ha chiesti.</p>
     </div>
@@ -188,7 +192,7 @@
       </a>
     </div>
 
-    <p class="sub-kicker rv">siti fatti per altri</p>
+    <p class="sub-kicker rv">// siti fatti per altri</p>
     <div class="tiles">
       <a class="tile glass rv" href="https://www.lgshoes.it/" target="_blank" rel="noopener">
         <span class="ico sm i-shoe"><i class="fas fa-shoe-prints"></i></span>
@@ -213,7 +217,7 @@
 <section class="sec" id="musica">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">✦ musica</p>
+      <p class="kicker">// 03 &mdash; musica</p>
       <h2>Produzioni musicali</h2>
       <p>Ogni brano nasce solo con software open source, <b>completamente offline</b>, sul mio PC. Niente cloud, niente plugin a pagamento: volevo vedere fin dove si arriva con strumenti liberi. Giudica tu.</p>
     </div>
@@ -230,7 +234,7 @@
 <section class="sec" id="servizi">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">✦ per te</p>
+      <p class="kicker">// 04 &mdash; per te</p>
       <h2>Se ti serve una mano</h2>
       <p>Queste le faccio anche su richiesta. Scrivimi e ne parliamo, il preventivo non costa niente.</p>
     </div>
@@ -267,7 +271,7 @@
         <div class="bubble-frame"><img src="img/fotoprofilo.JPG" alt="Cammo"></div>
       </div>
       <div class="about-txt">
-        <p class="kicker">✦ chi sono</p>
+        <p class="kicker">// 05 &mdash; chi sono</p>
         <h2>Cammo, classe &rsquo;96</h2>
         <p>Napoletano, smanettone da sempre. Mi piace costruire cose che si possono toccare o provare subito: un gioco che parte con un clic, un programma che fa il suo lavoro senza chiederti un account, un pezzo di plastica che esce dalla stampante esattamente come l&rsquo;avevi pensato.</p>
         <p>Credo che la tecnologia debba essere libera e restare a casa tua. Per questo lavoro quasi sempre open source e offline, lontano dai grandi cloud. DaProd è il nome sotto cui metto tutto quanto.</p>
@@ -281,7 +285,7 @@
 <section class="sec" id="contatti">
   <div class="wrap">
     <div class="contact glass rv">
-      <p class="kicker">✦ contatti</p>
+      <p class="kicker">// 06 &mdash; contatti</p>
       <h2>Scrivimi</h2>
       <p>Di cosa vuoi parlare?</p>
       <div class="topics" role="radiogroup" aria-label="Argomento">

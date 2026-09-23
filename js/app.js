@@ -1,5 +1,26 @@
 const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+// ── PIOGGIA MATRIX ──
+(function(){
+  const c = document.getElementById('mx'), x = c.getContext('2d');
+  const ch = 'アイウエオカキクケコサシスセソタチツテトナニヌネノ0123456789@#$%₤';
+  const fs = 14; let d = [];
+  function resize(){ c.width = innerWidth; c.height = innerHeight; d = Array.from({length:Math.ceil(c.width/fs)}, () => Math.random()*c.height/fs); }
+  function draw(){
+    x.fillStyle = 'rgba(2,8,6,.08)'; x.fillRect(0,0,c.width,c.height);
+    x.font = fs+'px monospace';
+    d.forEach((v,i) => {
+      x.fillStyle = Math.random() > .97 ? '#b8ffd0' : (i % 7 === 0 ? '#3ddbff' : '#00ff41');
+      x.fillText(ch[Math.floor(Math.random()*ch.length)], i*fs, v*fs);
+      if (v*fs > c.height && Math.random() > .975) d[i] = 0;
+      d[i]++;
+    });
+  }
+  resize(); addEventListener('resize', resize);
+  if (REDUCED) { for (let i = 0; i < 40; i++) draw(); return; }
+  setInterval(() => { if (!document.hidden) draw(); }, 55);
+})();
+
 // ── BOLLE ──
 (function(){
   const c = document.getElementById('bubbles'), x = c.getContext('2d');
@@ -13,17 +34,17 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
     dpr = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
     c.width = W*dpr; c.height = H*dpr; c.style.width = W+'px'; c.style.height = H+'px';
     x.setTransform(dpr,0,0,dpr,0,0);
-    const n = Math.round(Math.min(34, W/40));
+    const n = Math.round(Math.min(16, W/80));
     bs = Array.from({length:n}, () => mk(false));
   }
   function bubble(b){
     const g = x.createRadialGradient(b.x - b.r*.35, b.y - b.r*.4, b.r*.05, b.x, b.y, b.r);
-    g.addColorStop(0, 'rgba(255,255,255,.55)');
-    g.addColorStop(.55, 'rgba(255,255,255,.06)');
-    g.addColorStop(.9, 'rgba(160,225,255,.22)');
-    g.addColorStop(1, 'rgba(255,255,255,.6)');
+    g.addColorStop(0, 'rgba(255,255,255,.28)');
+    g.addColorStop(.55, 'rgba(61,219,255,.03)');
+    g.addColorStop(.9, 'rgba(61,255,160,.14)');
+    g.addColorStop(1, 'rgba(180,255,230,.4)');
     x.fillStyle = g; x.beginPath(); x.arc(b.x, b.y, b.r, 0, Math.PI*2); x.fill();
-    x.fillStyle = 'rgba(255,255,255,.85)';
+    x.fillStyle = 'rgba(255,255,255,.6)';
     x.beginPath(); x.ellipse(b.x - b.r*.38, b.y - b.r*.45, b.r*.26, b.r*.14, -.6, 0, Math.PI*2); x.fill();
   }
   function frame(){
