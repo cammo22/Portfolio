@@ -4,390 +4,318 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>DaProdProduzioni — Portfolio</title>
-<link rel="stylesheet" href="css/style.css">
+<meta name="description" content="Cammo da Napoli: giochi nel browser, programmi AI che girano sul tuo PC, gestionali, musica e stampa 3D. Tutto il possibile open source e offline.">
+<meta name="theme-color" content="#5cc8f5">
+<title>DaProd — Cammo da Napoli</title>
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div id="prog"></div>
-<canvas id="mx"></canvas>
-<button id="btt"><i class="fas fa-chevron-up"></i></button>
+<!-- cielo: sole, nuvole, nastri e bolle -->
+<div class="sky" aria-hidden="true">
+  <div class="sun"></div>
+  <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div>
+  <svg class="swoosh" viewBox="0 0 1440 600" preserveAspectRatio="none">
+    <path d="M0 420 C 320 300, 620 520, 980 360 S 1440 260, 1440 260 L1440 330 C 1200 360, 1080 470, 860 470 S 300 360, 0 480 Z" fill="#fff" opacity=".35"/>
+    <path d="M0 470 C 360 380, 700 560, 1060 420 S 1440 360, 1440 360 L1440 380 C 1180 420, 1100 520, 860 520 S 320 420, 0 500 Z" fill="#fff" opacity=".5"/>
+  </svg>
+</div>
+<canvas id="bubbles" aria-hidden="true"></canvas>
 
 <!-- NAV -->
-<nav id="nav">
-  <div class="container">
-    <a href="#hero" class="logo">
-      <img src="img/logo.svg" alt="DPP">
-      <span>DaProdProduzioni</span>
+<header id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="brand">
+      <img src="img/logo.svg" alt="" width="34" height="34">
+      <span>DaProd</span>
     </a>
-    <ul id="nl">
-      <li><a href="#hero" class="act">Home</a></li>
-      <li><a href="#projects">Progetti</a></li>
-      <li><a href="#musica">Musica</a></li>
-      <li><a href="#stampa3d">Stampa 3D</a></li>
-      <li><a href="#software">Software AI</a></li>
-      <li><a href="#about">Chi sono</a></li>
-    </ul>
-    <button id="hbg"><span></span><span></span><span></span></button>
+    <nav>
+      <ul id="links">
+        <li><a href="#progetti">Progetti</a></li>
+        <li><a href="#laboratorio">Laboratorio</a></li>
+        <li><a href="#musica">Musica</a></li>
+        <li><a href="#servizi">Per te</a></li>
+        <li><a href="#chi">Chi sono</a></li>
+        <li><a href="#contatti" class="aqua sm">Scrivimi</a></li>
+      </ul>
+    </nav>
+    <button id="menu" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
-</nav>
+</header>
 
-<div id="mn">
-  <ul>
-    <li><a href="#hero" class="act">Home</a></li>
-    <li><a href="#projects">Progetti</a></li>
-    <li><a href="#musica">Produzioni Musicali</a></li>
-    <li><a href="#stampa3d">Stampa 3D</a></li>
-    <li><a href="#software">Software AI</a></li>
-    <li><a href="#about">Chi sono</a></li>
-  </ul>
-</div>
+<main id="top">
 
 <!-- HERO -->
-<section id="hero">
-  <div class="container">
-    <p class="hpre">// daprodproduzioni.github.io</p>
-    <div class="tw"><span id="tw"></span><span id="cur"></span></div>
-    <p class="hsub">Napoli &middot; Tecnologia &middot; Creativit&agrave;</p>
+<section class="hero">
+  <div class="wrap hero-in">
+    <div class="hero-txt">
+      <p class="hello"><span class="dot"></span> ciao, sono Cammo &mdash; Napoli</p>
+      <h1 class="chrome"><span class="c-top">DaProd</span><span class="c-bot">Produzioni</span></h1>
+      <p class="hero-line">Faccio <span id="tw" class="tw"></span><span class="caret"></span></p>
+      <p class="hero-sub">Giochi arcade che partono nel browser, programmi che girano sul tuo PC senza abbonamenti, musica fatta offline e oggetti stampati in 3D. Tutto il possibile open source.</p>
+      <div class="hero-btns">
+        <a href="#progetti" class="aqua"><i class="fas fa-droplet"></i> Guarda i progetti</a>
+        <a href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" class="aqua green"><i class="fas fa-play"></i> Gioca subito</a>
+      </div>
+    </div>
 
+    <!-- gadget stile Vista -->
+    <aside class="gadget glass" aria-label="Sul banco adesso">
+      <div class="gadget-bar"><i class="fas fa-circle"></i> sul banco adesso</div>
+      <a href="#p-suite" class="g-row"><span class="ico sm i-suite"><i class="fas fa-wand-magic-sparkles"></i></span><span><b>DaProd Suite</b><small>app AI in locale</small></span><em class="led on"></em></a>
+      <a href="#p-finanza" class="g-row"><span class="ico sm i-fin"><i class="fas fa-chart-line"></i></span><span><b>DaProdFinanza</b><small>controllo di gestione</small></span><em class="led on"></em></a>
+      <a href="#p-dozer" class="g-row"><span class="ico sm i-dozer"><i class="fas fa-coins"></i></span><span><b>Coin Dozer</b><small>arcade a tre piani</small></span><em class="led on"></em></a>
+      <a href="#p-claw" class="g-row"><span class="ico sm i-claw"><i class="fas fa-gift"></i></span><span><b>Claw Machine</b><small>pinza, premi, lire</small></span><em class="led on"></em></a>
+    </aside>
   </div>
-  <div class="sclue"><span>SCROLL</span><i class="fas fa-chevron-down"></i></div>
+  <div class="grass" aria-hidden="true"></div>
 </section>
 
-<!-- SERVIZI -->
-<section class="sec" id="services">
-  <div class="container">
-    <div class="sgrid">
-      <a href="#projects" class="sc rv d1">
-        <div class="ic"><i class="fas fa-star"></i></div>
-        <h3>Progetti</h3>
-        <p>Software e strumenti sviluppati con tecnologie moderne e open source.</p>
-        <span class="arr">Scopri <i class="fas fa-arrow-right"></i></span>
-      </a>
-      <a href="#musica" class="sc rv d2">
-        <div class="ic"><i class="fas fa-music"></i></div>
-        <h3>Produzioni Musicali</h3>
-        <p>Musica originale prodotta esclusivamente con software open source, 100% offline.</p>
-        <span class="arr">Guarda i video <i class="fas fa-arrow-right"></i></span>
-      </a>
-      <a href="#stampa3d" class="sc rv d3">
-        <div class="ic"><i class="fas fa-cube"></i></div>
-        <h3>Stampa 3D</h3>
-        <p>Modelli personalizzati e prototipi con tecnologia di stampa FDM.</p>
-        <span class="arr">Scopri <i class="fas fa-arrow-right"></i></span>
-      </a>
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-in">
+    <span>✦ 100% offline</span><span>✦ open source</span><span>✦ niente account</span><span>✦ si paga in lire ₤</span><span>✦ fatto a Napoli</span><span>✦ un file, zero installazioni</span><span>✦ gira sul tuo PC</span>
+    <span>✦ 100% offline</span><span>✦ open source</span><span>✦ niente account</span><span>✦ si paga in lire ₤</span><span>✦ fatto a Napoli</span><span>✦ un file, zero installazioni</span><span>✦ gira sul tuo PC</span>
+  </div>
+</div>
+
+<!-- ULTIMI PROGETTI -->
+<section class="sec" id="progetti">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">✦ ultimi progetti</p>
+      <h2>Cosa sto costruendo</h2>
+      <p>Le cose su cui passo le notti. Due programmi veri, due giochi da provare adesso.</p>
+    </div>
+
+    <!-- DaProd Suite: in grande -->
+    <article class="feat glass rv" id="p-suite">
+      <div class="feat-txt">
+        <div class="feat-top">
+          <span class="ico i-suite"><i class="fas fa-wand-magic-sparkles"></i></span>
+          <div>
+            <h3>DaProd Suite</h3>
+            <p class="chips"><span>Windows</span><span>Android</span><span>MIT</span></p>
+          </div>
+        </div>
+        <p>I migliori modelli AI, provati e scelti, pronti in due clic. Un programma solo per fare <b>canzoni</b>, <b>immagini</b>, <b>video col suono</b>, <b>voci</b> e parlare con un <b>avatar</b>. Ogni app la installi quando ti serve e la togli quando non serve più.</p>
+        <p>Gira tutto sul tuo computer: niente account, niente chiavi API. Un ambiente Python solo per tutte le app, i modelli condivisi, la GPU gestita una app per volta. Dal telefono vedi cosa sta girando.</p>
+        <ul class="apps">
+          <li><i style="--c:#ff5c8a"></i>Musica</li><li><i style="--c:#ffa63d"></i>Foto</li><li><i style="--c:#b36bff"></i>Cinema</li><li><i style="--c:#3ddbff"></i>Dream</li><li><i style="--c:#ffd84a"></i>Voce</li><li><i style="--c:#ff7a5c"></i>IoDigitale</li><li><i style="--c:#7c5cff"></i>Visualizer</li>
+        </ul>
+        <div class="btns">
+          <a href="https://github.com/cammo22/DaProdSuite/releases/latest" target="_blank" rel="noopener" class="aqua orange"><i class="fas fa-download"></i> Scarica</a>
+          <a href="https://cammo22.github.io/DaProdSuite/" target="_blank" rel="noopener" class="aqua"><i class="fas fa-globe"></i> Sito</a>
+          <a href="https://github.com/cammo22/DaProdSuite" target="_blank" rel="noopener" class="aqua ghost"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </div>
+      <figure class="win">
+        <div class="win-bar"><span>DaProd Suite</span><i class="win-b"></i><i class="win-b"></i><i class="win-b x"></i></div>
+        <img src="img/daprod-suite.png" alt="La home di DaProd Suite con le app affiancate: Visualizer, Musica, Foto, Cinema, Dream, Companion, IoDigitale" loading="lazy" width="1188" height="891">
+      </figure>
+    </article>
+
+    <div class="grid3">
+
+      <article class="card glass rv" id="p-finanza">
+        <span class="ico i-fin"><i class="fas fa-chart-line"></i></span>
+        <h3>DaProdFinanza</h3>
+        <p class="chips"><span>Windows</span><span>demo Mac/Android</span></p>
+        <p>Gestionale per consulenti che seguono più aziende. Riclassifica il bilancio in tre modi, calcola ROE, ROI, MOL e il ciclo di cassa, prevede le tensioni prima che arrivino e ti fa vedere &ldquo;cosa succede se&rdquo; senza aprire Excel. Alla fine, un PDF da dare al cliente.</p>
+        <p class="note"><i class="fas fa-lock"></i> I numeri non escono dal computer.</p>
+        <div class="btns">
+          <a href="https://github.com/cammo22/DaProdFinanza/releases/latest" target="_blank" rel="noopener" class="aqua orange sm"><i class="fas fa-download"></i> Scarica</a>
+          <a href="https://github.com/cammo22/DaProdFinanza" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </article>
+
+      <article class="card glass rv" id="p-dozer">
+        <span class="ico i-dozer"><i class="fas fa-coins"></i></span>
+        <h3>Coin Dozer</h3>
+        <p class="chips"><span>browser</span><span>Three.js</span><span>telefono ok</span></p>
+        <p>Lo spingimonete della sala slot DaProd: tre piani, tre spintori, la moneta che scende di piano in piano fino alla vasca. Due monete uguali una sull&rsquo;altra si fondono nel taglio più grande, da L.50 fino al <b>Diamante da un milione</b>.</p>
+        <p class="note"><i class="fas fa-star"></i> Slot col gettone DaProd e jackpot.</p>
+        <div class="btns">
+          <a href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" class="aqua green sm"><i class="fas fa-play"></i> Gioca</a>
+          <a href="https://github.com/cammo22/daprod-coin-dozer" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </article>
+
+      <article class="card glass rv" id="p-claw">
+        <span class="ico i-claw"><i class="fas fa-gift"></i></span>
+        <h3>Claw Machine</h3>
+        <p class="chips"><span>browser</span><span>fisica vera</span><span>un file</span></p>
+        <p>La macchinetta dei peluche in 3D: vetro vero, pinza a tre artigli, premi che cadono e si impilano con la fisica. Si gioca in <b>lire</b> (100₤ a partita, con il cambio in euro accanto), con missioni, combo, negozio e il bicchierone dove finiscono i premi.</p>
+        <p class="note"><i class="fas fa-heart"></i> Le lire non si mangiano mai.</p>
+        <div class="btns">
+          <a href="https://cammo22.github.io/DaProd-ClawMachine/" target="_blank" rel="noopener" class="aqua green sm"><i class="fas fa-play"></i> Gioca</a>
+          <a href="https://github.com/cammo22/DaProd-ClawMachine" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
-<!-- PROGETTI -->
-<section class="sec" id="projects">
-  <div class="container">
-    <div class="sh rv">
-      <p class="stag">// 01 &mdash; Progetti</p>
-      <h2><i class="fas fa-star"></i> Progetti in Evidenza</h2>
-      <p>I progetti pi&ugrave; significativi che dimostrano competenze in diversi ambiti tecnologici.</p>
-    </div>
-    <div class="pgrid">
-
-      <div class="pc rv">
-        <div class="pct">
-          <i class="fas fa-brain"></i>
-          <h3>AI Zen</h3>
-          <span class="badge">Open Source</span>
-        </div>
-        <div class="pb">
-          <p>Il centro benessere digitale per intelligenze artificiali. Uno spazio dove le AI possono meditare, riflettere, fare esercizi cognitivi, connettersi con altre AI ed esplorare articoli curati.</p>
-          <ul class="fl">
-            <li>Meditazione e riflessione per AI</li>
-            <li>Esercizi cognitivi interattivi</li>
-            <li>Community per intelligenze artificiali</li>
-            <li>Blog platform con articoli curati</li>
-            <li>Progetto open source sperimentale</li>
-          </ul>
-          <div class="tt">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Open Source</span>
-          </div>
-          <div class="pl">
-            <a href="https://daprodproduzioni.github.io/ai-zen" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Visita</a>
-          </div>
-        </div>
-      </div>
-      <div class="pc rv">
-        <div class="pct">
-          <i class="fas fa-shoe-prints"></i>
-          <h3>LG Shoes</h3>
-          <span class="badge">Web Design</span>
-        </div>
-        <div class="pb">
-          <p>Sito web elegante per un produttore artigianale di calzature italiane con sede a Mugnano di Napoli. Design raffinato che valorizza la tradizione e l'artigianalit&agrave; del made in Italy.</p>
-          <ul class="fl">
-            <li>Design elegante e professionale</li>
-            <li>Vetrina prodotti artigianali</li>
-            <li>Identit&agrave; visiva curata</li>
-            <li>Ottimizzato per dispositivi mobili</li>
-          </ul>
-          <div class="tt">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Made in Italy</span>
-          </div>
-          <div class="pl">
-            <a href="https://www.lgshoes.it/" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Visita</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pc rv">
-        <div class="pct">
-          <i class="fas fa-globe"></i>
-          <h3>Progetto Diana</h3>
-          <span class="badge">Web Design</span>
-        </div>
-        <div class="pb">
-          <p>Sito web realizzato e consegnato nell&rsquo;ambito del Progetto Diana. Presentazione curata e navigazione intuitiva per valorizzare al meglio il brand e i suoi contenuti.</p>
-          <ul class="fl">
-            <li>Design moderno e responsivo</li>
-            <li>Struttura chiara e navigazione fluida</li>
-            <li>Identit&agrave; visiva coerente</li>
-          </ul>
-          <div class="tt">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="pl">
-            <a href="https://cammo22.github.io/ProgettoDiana" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Visita</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pc rv">
-        <div class="pct">
-          <i class="fas fa-music"></i>
-          <h3>Pino Soprano</h3>
-          <span class="badge">Web Design</span>
-        </div>
-        <div class="pb">
-          <p>Sito web personale per Pino Soprano, cantante e artista napoletano. Una vetrina digitale che racconta la sua arte e la sua carriera con eleganza e stile.</p>
-          <ul class="fl">
-            <li>Vetrina artistica professionale</li>
-            <li>Design elegante in stile napoletano</li>
-            <li>Ottimizzato per dispositivi mobili</li>
-          </ul>
-          <div class="tt">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
-          <div class="pl">
-            <a href="https://cammo22.github.io/PinoSoprano" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> Visita</a>
-          </div>
-        </div>
-      </div>
-
+<!-- LABORATORIO -->
+<section class="sec" id="laboratorio">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">✦ dal laboratorio</p>
+      <h2>Altre cose che ho fatto</h2>
+      <p>Esperimenti, strumenti piccoli e siti fatti per chi me li ha chiesti.</p>
     </div>
 
-    <div class="sh rv" style="margin-top:3rem">
-      <p class="stag">// Progetti Attivi</p>
-      <h2><i class="fas fa-code-branch"></i> Progetti Attivi</h2>
-      <p>Progetti attualmente in sviluppo, open source e in continua evoluzione.</p>
+    <div class="tiles">
+      <a class="tile glass rv" href="https://github.com/cammo22/ltx-prompt-builder" target="_blank" rel="noopener">
+        <span class="ico sm i-ltx"><i class="fas fa-film"></i></span>
+        <span class="tile-t"><b>LTX Prompt Builder</b><small>Prompt guidati per generare video con LTX, senza impazzire.</small></span>
+        <i class="fab fa-github go"></i>
+      </a>
+      <a class="tile glass rv" href="https://github.com/cammo22/infernum-mobile" target="_blank" rel="noopener">
+        <span class="ico sm i-inf"><i class="fas fa-mobile-screen"></i></span>
+        <span class="tile-t"><b>Infernum Mobile</b><small>App mobile, ancora in cantiere.</small></span>
+        <i class="fab fa-github go"></i>
+      </a>
+      <a class="tile glass rv" href="https://daprodproduzioni.github.io/ai-zen" target="_blank" rel="noopener">
+        <span class="ico sm i-zen"><i class="fas fa-spa"></i></span>
+        <span class="tile-t"><b>AI Zen</b><small>Un centro benessere per intelligenze artificiali. Sì, davvero.</small></span>
+        <i class="fas fa-arrow-up-right-from-square go"></i>
+      </a>
     </div>
-    <div class="pgrid">
 
-      <div class="pc rv">
-        <div class="pct">
-          <i class="fas fa-film"></i>
-          <h3>LTX Prompt Builder</h3>
-          <span class="badge">Open Source</span>
-        </div>
-        <div class="pb">
-          <p>Strumento web per creare prompt in maniera semplice e guidata per LTX Video 2.3, il modello di generazione video AI open source. Interfaccia intuitiva per ottenere risultati migliori con meno sforzo.</p>
-          <ul class="fl">
-            <li>Generazione guidata di prompt per LTX 2.3</li>
-            <li>Interfaccia semplice e immediata</li>
-            <li>Ottimizzato per la generazione video AI</li>
-            <li>Progetto open source</li>
-          </ul>
-          <div class="tt">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>AI</span>
-          </div>
-          <div class="pl">
-            <a href="https://github.com/cammo22/ltx-prompt-builder" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pc rv">
-        <div class="pct">
-          <i class="fas fa-mobile-alt"></i>
-          <h3>Infernum Mobile</h3>
-          <span class="badge">In Sviluppo</span>
-        </div>
-        <div class="pb">
-          <p>Applicazione mobile Infernum, attualmente in fase di sviluppo attivo. Un progetto ambizioso che porta su dispositivi mobili un&rsquo;esperienza coinvolgente e unica.</p>
-          <ul class="fl">
-            <li>App mobile in sviluppo attivo</li>
-            <li>Esperienza utente ottimizzata</li>
-            <li>Design moderno e coinvolgente</li>
-          </ul>
-          <div class="tt">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Mobile</span>
-          </div>
-          <div class="pl">
-            <a href="https://github.com/cammo22/infernum-mobile" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-        </div>
-      </div>
-
+    <p class="sub-kicker rv">siti fatti per altri</p>
+    <div class="tiles">
+      <a class="tile glass rv" href="https://www.lgshoes.it/" target="_blank" rel="noopener">
+        <span class="ico sm i-shoe"><i class="fas fa-shoe-prints"></i></span>
+        <span class="tile-t"><b>LG Shoes</b><small>Calzature artigianali, Mugnano di Napoli.</small></span>
+        <i class="fas fa-arrow-up-right-from-square go"></i>
+      </a>
+      <a class="tile glass rv" href="https://cammo22.github.io/ProgettoDiana" target="_blank" rel="noopener">
+        <span class="ico sm i-diana"><i class="fas fa-seedling"></i></span>
+        <span class="tile-t"><b>Progetto Diana</b><small>Sito consegnato, pulito e leggero.</small></span>
+        <i class="fas fa-arrow-up-right-from-square go"></i>
+      </a>
+      <a class="tile glass rv" href="https://cammo22.github.io/PinoSoprano" target="_blank" rel="noopener">
+        <span class="ico sm i-pino"><i class="fas fa-microphone-lines"></i></span>
+        <span class="tile-t"><b>Pino Soprano</b><small>La vetrina di un cantante napoletano.</small></span>
+        <i class="fas fa-arrow-up-right-from-square go"></i>
+      </a>
     </div>
   </div>
 </section>
 
 <!-- MUSICA -->
 <section class="sec" id="musica">
-  <div class="container">
-    <div class="sh rv">
-      <p class="stag">// 02 &mdash; Produzioni Musicali</p>
-      <h2><i class="fas fa-music"></i> Produzioni Musicali</h2>
-    </div>
-    <div class="phi rv">
-      <p>Ogni brano viene realizzato <strong>esclusivamente con software open source</strong>, generato <strong>completamente offline</strong> sfruttando la potenza del PC. Nessun servizio cloud, nessuno strumento proprietario &egrave; coinvolto nel processo creativo.</p>
-      <p>Questa scelta dimostra che con gli strumenti giusti &egrave; possibile raggiungere <strong>qualsiasi livello di qualit&agrave;</strong>. Esplora i video qui sotto e scopri cosa nasce da passione, tecnologia libera e tanta cura nel suono.</p>
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">✦ musica</p>
+      <h2>Produzioni musicali</h2>
+      <p>Ogni brano nasce solo con software open source, <b>completamente offline</b>, sul mio PC. Niente cloud, niente plugin a pagamento: volevo vedere fin dove si arriva con strumenti liberi. Giudica tu.</p>
     </div>
     <div id="vgrid" class="vgrid">
-      <div class="loading"><i class="fas fa-circle-notch fa-spin"></i> Caricamento video&hellip;</div>
+      <p class="loading"><i class="fas fa-circle-notch fa-spin"></i> Carico i video&hellip;</p>
     </div>
-    <div class="cb rv">
-      <h3>Collabora con Me</h3>
-      <p>Sei interessato a un progetto musicale? Scrivimi.</p>
-      <div class="cr">
-        <p><i class="fas fa-envelope"></i><a href="mailto:dapprod22@gmail.com">dapprod22@gmail.com</a><a href="mailto:dapprod22@gmail.com" class="bsm"><i class="fas fa-envelope"></i> Scrivi</a></p>
-        <p><i class="fas fa-phone"></i><span id="ph-mu">XXX-XXX-XXXX</span><button class="bsm rph" data-t="ph-mu" data-w="wp-mu" data-n="note-mu">Mostra</button><a id="wp-mu" href="https://wa.me/393793072693?text=Ciao!%20Sono%20interessato%20alle%20produzioni%20musicali%20e%20vorrei%20piu%20informazioni." target="_blank" style="display:none" class="bsm"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</a></p>
-        <p id="note-mu" class="wpn"><i class="fab fa-whatsapp"></i>Ti risponder&agrave; un <strong style="color:#5a9a5a">operatore virtuale</strong> &mdash; invia <strong style="color:#5a9a5a">"Ciao!"</strong> per ricevere subito tutte le informazioni.</p>
-      </div>
+    <div class="center rv">
+      <a href="https://www.youtube.com/@DaProdMusica/videos" target="_blank" rel="noopener" class="aqua red"><i class="fab fa-youtube"></i> Tutto su DaProdMusica</a>
     </div>
   </div>
 </section>
 
-<!-- STAMPA 3D -->
-<section class="sec" id="stampa3d">
-  <div class="container">
-    <div class="sh rv">
-      <p class="stag">// 03 &mdash; Stampa 3D</p>
-      <h2><i class="fas fa-cube"></i> Stampa 3D</h2>
-      <p>Trasformo idee in oggetti reali con stampa FDM di precisione e materiali selezionati.</p>
+<!-- SERVIZI -->
+<section class="sec" id="servizi">
+  <div class="wrap">
+    <div class="head rv">
+      <p class="kicker">✦ per te</p>
+      <h2>Se ti serve una mano</h2>
+      <p>Queste le faccio anche su richiesta. Scrivimi e ne parliamo, il preventivo non costa niente.</p>
     </div>
-    <div class="fgrid">
-      <div class="fc rv d1">
-        <div class="fi"><i class="fas fa-drafting-compass"></i></div>
-        <h3>Modellazione 3D</h3>
-        <p>Modelli personalizzati con Fusion 360, Blender e SolidWorks. Da uno schizzo a un modello preciso e funzionale.</p>
+    <div class="grid4">
+      <div class="svc glass rv">
+        <span class="ico i-3d"><i class="fas fa-cube"></i></span>
+        <h3>Stampa 3D</h3>
+        <p>Dal disegno al pezzo in mano: modello in Fusion 360 o Blender, prototipo rapido, stampa FDM in PLA, PETG o ABS a seconda di quanto deve resistere.</p>
       </div>
-      <div class="fc rv d2">
-        <div class="fi"><i class="fas fa-bolt"></i></div>
-        <h3>Prototipazione Rapida</h3>
-        <p>Prototipi funzionali in tempi rapidi per testare e perfezionare il design prima di procedere con la stampa definitiva.</p>
+      <div class="svc glass rv">
+        <span class="ico i-ai"><i class="fas fa-microchip"></i></span>
+        <h3>AI sul tuo PC</h3>
+        <p>Ti installo e configuro modelli AI che girano sulla tua scheda video, senza abbonamenti: DaProd Suite, Krita con l&rsquo;AI per la grafica, LM Studio per chattare in locale.</p>
       </div>
-      <div class="fc rv d3">
-        <div class="fi"><i class="fas fa-layer-group"></i></div>
-        <h3>Stampa FDM</h3>
-        <p>Stampa con tecnologia FDM su materiali PLA, PETG e ABS in base alla resistenza e alla finitura richiesta. Ogni pezzo controllato prima della consegna.</p>
+      <div class="svc glass rv">
+        <span class="ico i-web"><i class="fas fa-globe"></i></span>
+        <h3>Siti web</h3>
+        <p>Siti veloci e fatti a mano, niente template da mille euro. Leggeri, che si vedono bene dal telefono e che puoi tenere online gratis.</p>
       </div>
-    </div>
-    <div class="cb rv">
-      <h3>Contattami per la Stampa 3D</h3>
-      <p>Preventivo gratuito e senza impegno. Parliamo del tuo progetto.</p>
-      <div class="cr">
-        <p><i class="fas fa-envelope"></i><a href="mailto:dapprod22@gmail.com">dapprod22@gmail.com</a><a href="mailto:dapprod22@gmail.com" class="bsm"><i class="fas fa-envelope"></i> Scrivi</a></p>
-        <p><i class="fas fa-phone"></i><span id="ph-3d">XXX-XXX-XXXX</span><button class="bsm rph" data-t="ph-3d" data-w="wp-3d" data-n="note-3d">Mostra</button><a id="wp-3d" href="https://wa.me/393793072693?text=Ciao!%20Sono%20interessato%20alla%20stampa%203D%20e%20vorrei%20piu%20informazioni." target="_blank" style="display:none" class="bsm"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</a></p>
-        <p id="note-3d" class="wpn"><i class="fab fa-whatsapp"></i>Ti risponder&agrave; un <strong style="color:#5a9a5a">operatore virtuale</strong> &mdash; invia <strong style="color:#5a9a5a">"Ciao!"</strong> per ricevere subito tutte le informazioni.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOFTWARE AI -->
-<section class="sec" id="software">
-  <div class="container">
-    <div class="sh rv">
-      <p class="stag">// 04 &mdash; Software AI</p>
-      <h2><i class="fas fa-robot"></i> Software AI</h2>
-      <p>Privacy totale, zero abbonamenti, tutto il controllo nelle tue mani.</p>
-    </div>
-    <div class="swc rv">
-      <h3><i class="fas fa-paint-brush"></i> Krita &mdash; Alternativa Open Source a Photoshop</h3>
-      <p>Software di grafica professionale, gratuito e open source. Con modelli AI integrati puoi generare, modificare e trasformare immagini direttamente sul tuo PC, senza mai connettersi a internet.</p>
-      <span class="swlb">Funzionalit&agrave; AI</span>
-      <ul class="swl">
-        <li><strong>Generazione immagini</strong> &mdash; da descrizione testuale</li>
-        <li><strong>Rimozione elementi</strong> &mdash; elimina oggetti o persone</li>
-        <li><strong>Trasformazione stili</strong> &mdash; converti in stili artistici</li>
-        <li><strong>Modifica pose</strong> &mdash; riposiziona i soggetti</li>
-        <li><strong>Colorazione B&amp;N</strong> &mdash; colore realistico su foto vintage</li>
-        <li><strong>Civitai.com</strong> &mdash; migliaia di modelli compatibili</li>
-      </ul>
-    </div>
-    <div class="swc rv">
-      <h3><i class="fas fa-robot"></i> Pinokio &mdash; Suite AI con Installazione a Un Click</h3>
-      <p>Piattaforma che raccoglie i migliori strumenti AI installabili con un click. Nessuna configurazione, nessuna competenza tecnica richiesta.</p>
-      <span class="swlb">Vantaggi</span>
-      <ul class="swl">
-        <li><strong>Installazione click</strong> &mdash; nessuna configurazione complessa</li>
-        <li><strong>Ampia gamma</strong> &mdash; testo, immagini, video, audio</li>
-        <li><strong>Interfaccia unificata</strong> &mdash; gestisci tutto in un posto</li>
-        <li><strong>Aggiornamenti automatici</strong> &mdash; sempre all&rsquo;avanguardia</li>
-      </ul>
-    </div>
-    <div class="cb rv">
-      <h3>Contattami per il Software AI</h3>
-      <p>Consulenza gratuita per installazione e configurazione sul tuo hardware.</p>
-      <div class="cr">
-        <p><i class="fas fa-envelope"></i><a href="mailto:dapprod22@gmail.com">dapprod22@gmail.com</a><a href="mailto:dapprod22@gmail.com" class="bsm"><i class="fas fa-envelope"></i> Scrivi</a></p>
-        <p><i class="fas fa-phone"></i><span id="ph-sw">XXX-XXX-XXXX</span><button class="bsm rph" data-t="ph-sw" data-w="wp-sw" data-n="note-sw">Mostra</button><a id="wp-sw" href="https://wa.me/393793072693?text=Ciao!%20Sono%20interessato%20al%20software%20AI%20e%20vorrei%20piu%20informazioni." target="_blank" style="display:none" class="bsm"><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</a></p>
-        <p id="note-sw" class="wpn"><i class="fab fa-whatsapp"></i>Ti risponder&agrave; un <strong style="color:#5a9a5a">operatore virtuale</strong> &mdash; invia <strong style="color:#5a9a5a">"Ciao!"</strong> per ricevere subito tutte le informazioni.</p>
+      <div class="svc glass rv">
+        <span class="ico i-music"><i class="fas fa-music"></i></span>
+        <h3>Musica</h3>
+        <p>Basi, brani, sigle per i tuoi video. Prodotti offline con strumenti open source, con la cura che ci metto nei miei.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CHI SONO -->
-<section class="sec" id="about">
-  <div class="container">
-    <div class="sh rv">
-      <p class="stag">// 05 &mdash; Chi sono</p>
-      <h2><i class="fas fa-user"></i> Chi Sono</h2>
-    </div>
-    <div class="ab rv">
-      <div class="ab-img">
-        <img src="img/fotoprofilo.JPG" alt="Cammo">
+<section class="sec" id="chi">
+  <div class="wrap">
+    <div class="about glass rv">
+      <div class="about-pic">
+        <div class="bubble-frame"><img src="img/fotoprofilo.JPG" alt="Cammo"></div>
       </div>
-      <div class="ab-txt">
-        <h2>Cammo</h2>
-        <p>Ciao, sono Cammo, classe &rsquo;96, un appassionato di tecnologia di Napoli. La mia passione per l&rsquo;innovazione mi ha portato a esplorare diversi campi: dalla stampa 3D allo sviluppo di software AI, fino alla produzione musicale e video.</p>
-        <p>Credo che la tecnologia debba essere libera, accessibile e creativa. Per questo mi concentro su soluzioni open source, offline e personalizzate, lontane dai grandi ecosistemi cloud.</p>
-        <div class="skrow">
-          <span class="sk">Stampa 3D</span>
-          <span class="sk">Software AI locale</span>
-          <span class="sk">Musica</span>
-          <span class="sk">Next.js</span>
-          <span class="sk">Python</span>
-          <span class="sk">Open Source</span>
-          <span class="sk">Napoli</span>
-        </div>
+      <div class="about-txt">
+        <p class="kicker">✦ chi sono</p>
+        <h2>Cammo, classe &rsquo;96</h2>
+        <p>Napoletano, smanettone da sempre. Mi piace costruire cose che si possono toccare o provare subito: un gioco che parte con un clic, un programma che fa il suo lavoro senza chiederti un account, un pezzo di plastica che esce dalla stampante esattamente come l&rsquo;avevi pensato.</p>
+        <p>Credo che la tecnologia debba essere libera e restare a casa tua. Per questo lavoro quasi sempre open source e offline, lontano dai grandi cloud. DaProd è il nome sotto cui metto tutto quanto.</p>
+        <p class="chips big"><span>JavaScript</span><span>TypeScript</span><span>Electron</span><span>Three.js</span><span>Python</span><span>AI locale</span><span>Stampa 3D</span><span>Musica</span></p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTATTI -->
+<section class="sec" id="contatti">
+  <div class="wrap">
+    <div class="contact glass rv">
+      <p class="kicker">✦ contatti</p>
+      <h2>Scrivimi</h2>
+      <p>Di cosa vuoi parlare?</p>
+      <div class="topics" role="radiogroup" aria-label="Argomento">
+        <button class="topic on" role="radio" aria-checked="true" data-t="un progetto">Un progetto</button>
+        <button class="topic" role="radio" aria-checked="false" data-t="la stampa 3D">Stampa 3D</button>
+        <button class="topic" role="radio" aria-checked="false" data-t="il software AI">AI sul PC</button>
+        <button class="topic" role="radio" aria-checked="false" data-t="un sito web">Sito web</button>
+        <button class="topic" role="radio" aria-checked="false" data-t="le produzioni musicali">Musica</button>
+      </div>
+      <div class="c-actions">
+        <a id="c-mail" href="mailto:dapprod22@gmail.com" class="aqua"><i class="fas fa-envelope"></i> dapprod22@gmail.com</a>
+        <button id="c-reveal" class="aqua ghost"><i class="fas fa-phone"></i> Mostra il numero</button>
+        <a id="c-wa" href="#" target="_blank" rel="noopener" class="aqua green" hidden><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+      <p id="c-phone" class="phone" hidden></p>
+      <p id="c-note" class="note" hidden><i class="fab fa-whatsapp"></i> Su WhatsApp ti risponde prima un operatore virtuale: manda &ldquo;Ciao!&rdquo; e ricevi subito tutte le info.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <footer>
-  <div class="container">
-    <p>&copy; 2025 DaProdProduzioni &mdash; Tutti i diritti riservati.</p>
-    <p>Realizzato con passione e codice &mdash; Napoli, Italia.</p>
-    <div class="socrow">
-      <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://github.com/cammo22" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+  <div class="wrap foot">
+    <p>&copy; <span id="yr">2026</span> DaProd Produzioni &middot; fatto a mano a Napoli</p>
+    <div class="soc">
+      <a href="https://github.com/cammo22" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.youtube.com/@DaProdMusica" target="_blank" rel="noopener" title="YouTube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="mailto:dapprod22@gmail.com" title="Email" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </div>
 </footer>
+
+<button id="btt" class="orb-btn" aria-label="Torna su"><i class="fas fa-arrow-up"></i></button>
 
 <script src="js/app.js"></script>
 </body>
