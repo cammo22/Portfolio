@@ -12,7 +12,7 @@
 [![Napoli](https://img.shields.io/badge/fatto_a-Napoli-3ddbff?style=flat-square&labelColor=04120c)](#chi-sono)
 
 **[🌐 Sito](https://cammo22.github.io/Portfolio/)** ·
-**[🕹️ Gioca](#-ultimi-progetti)** ·
+**[🎰 Sala Slot](#-sala-slot-daprod)** ·
 **[🎵 Musica](https://www.youtube.com/@DaProdMusica)** ·
 **[✉️ Scrivimi](mailto:dapprod22@gmail.com)**
 
@@ -39,12 +39,61 @@ quello che ci sto costruendo intorno.
 |:-:|---|---|---|
 | 🪄 | **[DaProd Suite](https://github.com/cammo22/DaProdSuite)** | I migliori modelli AI, pronti in due clic: canzoni, immagini, video col suono, voci, un avatar che ti risponde. Tutto sul tuo PC, niente account né chiavi API. | [⬇ Scarica](https://github.com/cammo22/DaProdSuite/releases/latest) · [🌐 Sito](https://cammo22.github.io/DaProdSuite/) |
 | 📈 | **[DaProdFinanza](https://github.com/cammo22/DaProdFinanza)** | Controllo di gestione per chi segue più aziende: bilancio riclassificato, indici, previsione di cassa, simulazioni e report PDF. I numeri non escono dal computer. | [⬇ Scarica](https://github.com/cammo22/DaProdFinanza/releases/latest) |
-| 🪙 | **[Coin Dozer](https://github.com/cammo22/daprod-coin-dozer)** | Lo spingimonete della sala slot DaProd: tre piani, monete uguali che si fondono fino al Diamante da un milione. Three.js, un solo file. | [▶ Gioca](https://cammo22.github.io/daprod-coin-dozer/) |
-| 🧸 | **[Claw Machine](https://github.com/cammo22/DaProd-ClawMachine)** | La macchinetta dei peluche in 3D, con fisica vera e pinza a tre artigli. Si gioca in lire. | [▶ Gioca](https://cammo22.github.io/DaProd-ClawMachine/) |
+| 🎰 | **[Sala Slot DaProd](#-sala-slot-daprod)** | Quattro videogiochi da giocare subito nel browser, anche dal telefono. Si paga in lire. | [▶ Entra](#-sala-slot-daprod) |
 
 <div align="center">
 <img src="img/readme/sito-progetti.png" alt="La sezione progetti del sito, con DaProd Suite in evidenza" width="100%">
 </div>
+
+## 🎰 Sala Slot DaProd
+
+La mia sala giochi. Tutti partono nel browser, anche dal telefono. Non c'è niente da scaricare
+e non c'è pubblicità. Si gioca con le lire, **1 € = 1.936,27 ₤**.
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<a href="https://cammo22.github.io/daprod-coin-dozer/"><img src="img/giochi/coin-dozer.webp" alt="Coin Dozer: la macchina a tre piani con la scritta CATENA ×23"></a>
+
+### 🪙 Coin Dozer
+Una macchina a **tre piani** con tre spintori. Due monete uguali una sopra l'altra si fondono nel
+taglio più grande, anche a catena, fino al **Diamante da L.1 milione**. Il gettone DaProd fa girare
+lo slot, e con tre loghi arriva il **JACKPOT**.
+
+[![Gioca](https://img.shields.io/badge/%E2%96%B6_GIOCA-Coin_Dozer-ffd54a?style=for-the-badge&labelColor=1a1428)](https://cammo22.github.io/daprod-coin-dozer/) [codice](https://github.com/cammo22/daprod-coin-dozer)
+</td>
+<td width="50%" valign="top">
+<a href="https://cammo22.github.io/DaProd-ClawMachine/"><img src="img/giochi/claw-machine.webp" alt="Claw Machine: la pinza a tre artigli aperta sopra i peluche"></a>
+
+### 🧸 Claw Machine
+La macchinetta dei peluche in 3D, con vetro vero, **pinza a tre artigli** e premi che si impilano
+con la fisica (cannon-es). Costa **100₤** a partita e hai due minuti. Ci sono missioni, combo, il
+negozio e il bicchierone dei premi.
+
+[![Gioca](https://img.shields.io/badge/%E2%96%B6_GIOCA-Claw_Machine-ff4fa3?style=for-the-badge&labelColor=1a0a14)](https://cammo22.github.io/DaProd-ClawMachine/) [codice](https://github.com/cammo22/DaProd-ClawMachine)
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="https://cammo22.github.io/Gioco1/"><img src="img/giochi/vesuvio.webp" alt="Vesuvio.exe: arena, robot del quartiere e Borsa del Golfo"></a>
+
+### 🌋 VESUVIO.EXE
+Un clicker nella Ponticelli cyberpunk. Ci sono mostri e boss da battere, i robot del quartiere che
+lavorano per te e la **Borsa del Golfo** da seguire in tempo reale.
+
+[![Gioca](https://img.shields.io/badge/%E2%96%B6_GIOCA-Vesuvio.exe-ff7a2f?style=for-the-badge&labelColor=1a0e06)](https://cammo22.github.io/Gioco1/) [codice](https://github.com/cammo22/Gioco1)
+</td>
+<td width="50%" valign="top">
+<a href="https://cammo22.github.io/TapTap/"><img src="img/giochi/chronicles.webp" alt="Chronicles Idle Legends: il Cristallo primordiale e i potenziamenti"></a>
+
+### 💎 Chronicles Idle Legends
+Sei Kael, Custode dell'Alba. Tocchi il **Cristallo primordiale** per far salire la combo, poi
+sconfiggi i boss, assoldi compagni e fai crescere l'albero dei talenti.
+
+[![Gioca](https://img.shields.io/badge/%E2%96%B6_GIOCA-Chronicles-b36bff?style=for-the-badge&labelColor=120a1a)](https://cammo22.github.io/TapTap/) [codice](https://github.com/cammo22/TapTap)
+</td>
+</tr>
+</table>
 
 ## 🧪 Dal laboratorio
 
@@ -90,7 +139,7 @@ index.html         la pagina
 css/style.css      stile: base scura tech + dettagli lucidi Y2K / Aero
 js/app.js          pioggia matrix, bolle, macchina da scrivere, menu, contatti, video
 video.txt          i video YouTube mostrati nella sezione Musica (un link per riga)
-img/               logo, foto, screenshot
+img/               logo, foto, screenshot (giochi in img/giochi/)
 ```
 
 **Provarlo in locale**

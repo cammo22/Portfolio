@@ -110,6 +110,16 @@ const reveal = new IntersectionObserver(es => es.forEach(e => {
 }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el => reveal.observe(el));
 
+// ── SALA SLOT: miniature ──
+document.querySelectorAll('.cab').forEach(cab => {
+  const shot = cab.querySelector('.screen .shot');
+  cab.querySelectorAll('.thumb').forEach(t => t.addEventListener('click', () => {
+    cab.querySelectorAll('.thumb').forEach(o => o.classList.toggle('on', o === t));
+    shot.style.opacity = 0;
+    setTimeout(() => { shot.src = t.dataset.src; shot.alt = t.dataset.alt; shot.style.opacity = 1; }, 180);
+  }));
+});
+
 // ── CONTATTI ──
 (function(){
   const PH = '+39 379 307 2693', WA = '393793072693';
