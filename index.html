@@ -47,6 +47,7 @@
     <nav>
       <ul id="links">
         <li><a href="#progetti">Progetti</a></li>
+        <li><a href="#sala-slot">Sala Slot</a></li>
         <li><a href="#laboratorio">Laboratorio</a></li>
         <li><a href="#musica">Musica</a></li>
         <li><a href="#servizi">Per te</a></li>
@@ -70,7 +71,7 @@
       <p class="hero-sub">Ciao, sono Cammo. Giochi arcade che partono nel browser, programmi che girano sul tuo PC senza abbonamenti, musica fatta offline e oggetti stampati in 3D. Tutto il possibile open source.</p>
       <div class="hero-btns">
         <a href="#progetti" class="aqua"><i class="fas fa-droplet"></i> Guarda i progetti</a>
-        <a href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" class="aqua green"><i class="fas fa-play"></i> Gioca subito</a>
+        <a href="#sala-slot" class="aqua green"><i class="fas fa-gamepad"></i> Sala Slot</a>
       </div>
     </div>
 
@@ -79,8 +80,8 @@
       <div class="gadget-bar"><i></i> sul banco adesso</div>
       <a href="#p-suite" class="g-row"><span class="ico sm i-suite"><i class="fas fa-wand-magic-sparkles"></i></span><span><b>DaProd Suite</b><small>app AI in locale</small></span><em class="led on"></em></a>
       <a href="#p-finanza" class="g-row"><span class="ico sm i-fin"><i class="fas fa-chart-line"></i></span><span><b>DaProdFinanza</b><small>controllo di gestione</small></span><em class="led on"></em></a>
-      <a href="#p-dozer" class="g-row"><span class="ico sm i-dozer"><i class="fas fa-coins"></i></span><span><b>Coin Dozer</b><small>arcade a tre piani</small></span><em class="led on"></em></a>
-      <a href="#p-claw" class="g-row"><span class="ico sm i-claw"><i class="fas fa-gift"></i></span><span><b>Claw Machine</b><small>pinza, premi, lire</small></span><em class="led on"></em></a>
+      <a href="#p-dozer" class="g-row"><span class="ico sm i-dozer"><i class="fas fa-coins"></i></span><span><b>Coin Dozer</b><small>sala slot · tre piani</small></span><em class="led on"></em></a>
+      <a href="#p-claw" class="g-row"><span class="ico sm i-claw"><i class="fas fa-gift"></i></span><span><b>Claw Machine</b><small>sala slot · peluche</small></span><em class="led on"></em></a>
     </aside>
   </div>
   <div class="grass" aria-hidden="true"></div>
@@ -99,7 +100,7 @@
     <div class="head rv">
       <p class="kicker">// 01 &mdash; ultimi progetti</p>
       <h2>Cosa sto costruendo</h2>
-      <p>Le cose su cui passo le notti. Due programmi veri, due giochi da provare adesso.</p>
+      <p>Le cose su cui passo le notti: due programmi veri, e una sala giochi intera.</p>
     </div>
 
     <!-- DaProd Suite: in grande -->
@@ -129,13 +130,19 @@
       </figure>
     </article>
 
-    <div class="grid3">
+    <div class="grid2">
 
       <article class="card glass rv" id="p-finanza">
         <span class="ico i-fin"><i class="fas fa-chart-line"></i></span>
         <h3>DaProdFinanza</h3>
         <p class="chips"><span>Windows</span><span>demo Mac/Android</span></p>
-        <p>Gestionale per consulenti che seguono più aziende. Riclassifica il bilancio in tre modi, calcola ROE, ROI, MOL e il ciclo di cassa, prevede le tensioni prima che arrivino e ti fa vedere &ldquo;cosa succede se&rdquo; senza aprire Excel. Alla fine, un PDF da dare al cliente.</p>
+        <p>Gestionale per i consulenti che seguono più aziende. Carichi i saldi (o l&rsquo;Excel che hai già) e il resto viene da sé, senza aprire un foglio di calcolo.</p>
+        <ul class="feats" style="--neon:#3ddbff">
+          <li><i class="fas fa-scale-balanced"></i> <span>Bilancio riclassificato <b>in tre modi</b> che devono dare lo stesso utile</span></li>
+          <li><i class="fas fa-gauge-high"></i> <span>ROE, ROI, ROS, MOL% con le soglie che usa davvero il consulente</span></li>
+          <li><i class="fas fa-hourglass-half"></i> <span>DSO, DIO, DPO e <b>CCC</b>: i giorni in cui i soldi restano fuori</span></li>
+          <li><i class="fas fa-code-branch"></i> <span>Scenari &ldquo;cosa succede se&rdquo;, punto di pareggio e report PDF</span></li>
+        </ul>
         <p class="note"><i class="fas fa-lock"></i> I numeri non escono dal computer.</p>
         <div class="btns">
           <a href="https://github.com/cammo22/DaProdFinanza/releases/latest" target="_blank" rel="noopener" class="aqua orange sm"><i class="fas fa-download"></i> Scarica</a>
@@ -143,30 +150,128 @@
         </div>
       </article>
 
-      <article class="card glass rv" id="p-dozer">
+      <a class="card glass rv teaser" href="#sala-slot">
         <span class="ico i-dozer"><i class="fas fa-coins"></i></span>
+        <h3>Sala Slot DaProd</h3>
+        <p class="chips"><span>4 giochi</span><span>browser</span><span>si paga in ₤</span></p>
+        <p>Coin Dozer, Claw Machine, Vesuvio.exe e Chronicles: i videogiochi DaProd, tutti giocabili subito nel browser, anche dal telefono. Niente da installare, niente account.</p>
+        <img class="teaser-shot" src="img/giochi/coin-dozer.webp" alt="" loading="lazy" width="1280" height="800">
+        <span class="teaser-go">Entra in sala <i class="fas fa-arrow-down"></i></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- SALA SLOT -->
+<section class="sec" id="sala-slot">
+  <div class="wrap">
+    <div class="slot-sign rv" aria-hidden="true">
+      <span class="bulbs"></span>
+      <p class="neon"><span class="n1">SALA</span> <span class="n2">SLOT</span></p>
+      <p class="neon-sub">DaProd &middot; aperto 24 ore su 24 &middot; si gioca in lire</p>
+      <span class="bulbs"></span>
+    </div>
+    <div class="head rv">
+      <p class="kicker">// 02 &mdash; videogiochi</p>
+      <h2>Sala Slot DaProd</h2>
+      <p>La mia sala giochi. Tutti partono nel browser, anche dal telefono. Non c'è niente da scaricare e non c'è pubblicità. Si gioca con le lire, <b>1 € = 1.936,27 ₤</b>, e le lire non si pagano con soldi veri.</p>
+    </div>
+
+    <!-- COIN DOZER -->
+    <article class="cab glass rv" id="p-dozer" style="--neon:#ffd54a;--neon2:#c86bff">
+      <div class="cab-screen">
+        <a class="screen" href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" aria-label="Gioca a Coin Dozer">
+          <img class="shot" src="img/giochi/coin-dozer.webp" alt="Coin Dozer: la macchina a tre piani piena di monete con la scritta CATENA ×23" loading="lazy" width="1280" height="800">
+          <span class="play-over"><i class="fas fa-play"></i> GIOCA</span>
+        </a>
+        <div class="thumbs">
+          <button class="thumb on" data-src="img/giochi/coin-dozer.webp" data-alt="Coin Dozer: la macchina a tre piani con la scritta CATENA ×23" aria-label="Screenshot 1"><img src="img/giochi/coin-dozer.webp" alt="" loading="lazy"></button>
+          <button class="thumb" data-src="img/giochi/coin-dozer-2.webp" data-alt="Coin Dozer: i tre piani pieni di monete e lo slot col jackpot in alto" aria-label="Screenshot 2"><img src="img/giochi/coin-dozer-2.webp" alt="" loading="lazy"></button>
+        </div>
+        <figure class="phone" aria-hidden="true"><img src="img/giochi/coin-dozer-mobile.webp" alt="" loading="lazy" width="520" height="1125"></figure>
+      </div>
+      <div class="cab-info">
+        <p class="cab-tag">cabinato 01 &middot; spingimonete</p>
         <h3>Coin Dozer</h3>
-        <p class="chips"><span>browser</span><span>Three.js</span><span>telefono ok</span></p>
-        <p>Lo spingimonete della sala slot DaProd: tre piani, tre spintori, la moneta che scende di piano in piano fino alla vasca. Due monete uguali una sull&rsquo;altra si fondono nel taglio più grande, da L.50 fino al <b>Diamante da un milione</b>.</p>
-        <p class="note"><i class="fas fa-star"></i> Slot col gettone DaProd e jackpot.</p>
-        <div class="btns">
-          <a href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" class="aqua green sm"><i class="fas fa-play"></i> Gioca</a>
-          <a href="https://github.com/cammo22/daprod-coin-dozer" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+        <p class="chips"><span>Three.js</span><span>un solo file</span><span>telefono ok</span><span>v2</span></p>
+        <p>Una macchina a <b>tre piani</b> con tre spintori. Scegli la moneta e la colonna, e la moneta scende di piano in piano fino alla vasca delle vincite. Quello che finisce nei buchi laterali va alla casa.</p>
+        <ul class="feats">
+          <li><i class="fas fa-layer-group"></i> <span>Due monete uguali una sopra l'altra <b>si fondono</b> nel taglio più grande. Vanno anche a catena, fino al <b>Diamante da L.1 milione</b></span></li>
+          <li><i class="fas fa-dice"></i> <span>Il <b>gettone DaProd</b> fa girare lo slot: coppia, tris, tre loghi = <b>JACKPOT</b></span></li>
+          <li><i class="fas fa-bolt"></i> <span>Raffica, multi-lancio, fusione magnetica, <b>Scossa</b> che fa saltare il tavolo</span></li>
+        </ul>
+        <div class="coin-row" aria-label="I tagli delle monete">
+          <span class="coin c-ag">50</span><span class="coin c-ag">100</span><span class="coin c-ag">200</span><span class="coin c-bi">500</span><span class="coin c-bi">1K</span><span class="coin c-au">5K</span><span class="coin c-em">10K</span><span class="coin c-sa">50K</span><span class="coin c-ru">100K</span><span class="coin c-di">1M</span>
         </div>
-      </article>
+        <div class="btns">
+          <a href="https://cammo22.github.io/daprod-coin-dozer/" target="_blank" rel="noopener" class="aqua green"><i class="fas fa-play"></i> Gioca ora</a>
+          <a href="https://github.com/cammo22/daprod-coin-dozer" target="_blank" rel="noopener" class="aqua ghost"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </div>
+    </article>
 
-      <article class="card glass rv" id="p-claw">
-        <span class="ico i-claw"><i class="fas fa-gift"></i></span>
+    <!-- CLAW MACHINE -->
+    <article class="cab flip glass rv" id="p-claw" style="--neon:#ff4fa3;--neon2:#3ddbff">
+      <div class="cab-screen">
+        <a class="screen" href="https://cammo22.github.io/DaProd-ClawMachine/" target="_blank" rel="noopener" aria-label="Gioca alla Claw Machine">
+          <img class="shot" src="img/giochi/claw-machine.webp" alt="Claw Machine: la pinza a tre artigli aperta sopra i peluche, dietro il vetro del cabinato" loading="lazy" width="1280" height="800">
+          <span class="play-over"><i class="fas fa-play"></i> GIOCA</span>
+        </a>
+        <div class="thumbs">
+          <button class="thumb on" data-src="img/giochi/claw-machine.webp" data-alt="Claw Machine: la pinza a tre artigli aperta sopra i peluche" aria-label="Screenshot 1"><img src="img/giochi/claw-machine.webp" alt="" loading="lazy"></button>
+          <button class="thumb" data-src="img/giochi/claw-machine-2.webp" data-alt="Claw Machine: la pinza che scende tra i peluche, con l'HUD in alto" aria-label="Screenshot 2"><img src="img/giochi/claw-machine-2.webp" alt="" loading="lazy"></button>
+        </div>
+      </div>
+      <div class="cab-info">
+        <p class="cab-tag">cabinato 02 &middot; pesca il peluche</p>
         <h3>Claw Machine</h3>
-        <p class="chips"><span>browser</span><span>fisica vera</span><span>un file</span></p>
-        <p>La macchinetta dei peluche in 3D: vetro vero, pinza a tre artigli, premi che cadono e si impilano con la fisica. Si gioca in <b>lire</b> (100₤ a partita, con il cambio in euro accanto), con missioni, combo, negozio e il bicchierone dove finiscono i premi.</p>
-        <p class="note"><i class="fas fa-heart"></i> Le lire non si mangiano mai.</p>
+        <p class="chips"><span>Three.js</span><span>cannon-es</span><span>fisica vera</span><span>un solo file</span></p>
+        <p>La macchinetta dei peluche, in 3D. Vetro vero, <b>pinza a tre artigli</b> come quelle del bar, e premi che piovono dall'alto e si impilano con la fisica. Se la presa è debole il premio ti scivola dalle dita.</p>
+        <ul class="feats">
+          <li><i class="fas fa-coins"></i> <span><b>100₤</b> a partita e due minuti di tempo. Le risalite costano 200₤, poi 500₤, e con la Chiave c'è la terza da 1000₤</span></li>
+          <li><i class="fas fa-rotate-left"></i> <span>Scendi gratis, poi scegli: <b>PRENDI</b> o <b>RIALZA</b> a vuoto. Le lire non si mangiano mai</span></li>
+          <li><i class="fas fa-trophy"></i> <span>Missioni, combo, livelli, negozio, il <b>bicchierone</b> dei premi e la borsa infinita</span></li>
+        </ul>
         <div class="btns">
-          <a href="https://cammo22.github.io/DaProd-ClawMachine/" target="_blank" rel="noopener" class="aqua green sm"><i class="fas fa-play"></i> Gioca</a>
-          <a href="https://github.com/cammo22/DaProd-ClawMachine" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+          <a href="https://cammo22.github.io/DaProd-ClawMachine/" target="_blank" rel="noopener" class="aqua green"><i class="fas fa-play"></i> Gioca ora</a>
+          <a href="https://github.com/cammo22/DaProd-ClawMachine" target="_blank" rel="noopener" class="aqua ghost"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </div>
+    </article>
+
+    <p class="sub-kicker rv">// e in fondo alla sala&hellip;</p>
+    <div class="grid2">
+      <article class="mini glass rv" style="--neon:#ff7a2f">
+        <a class="screen sm" href="https://cammo22.github.io/Gioco1/" target="_blank" rel="noopener" aria-label="Gioca a Vesuvio.exe">
+          <img class="shot" src="img/giochi/vesuvio.webp" alt="Vesuvio.exe: l'arena coi mostri, i robot del quartiere e la Borsa del Golfo" loading="lazy" width="1280" height="800">
+          <span class="play-over"><i class="fas fa-play"></i> GIOCA</span>
+        </a>
+        <div class="mini-info">
+          <h3>VESUVIO.EXE</h3>
+          <p class="chips"><span>idle clicker</span><span>Ponticelli cyberpunk</span></p>
+          <p>Un clicker ambientato nella Ponticelli cyberpunk. Fai fuori i mostri e i boss, metti a lavorare i robot del quartiere (la Lavandaia, 'O Meccanico, Don Circuito) e tieni d'occhio la <b>Borsa del Golfo</b> in tempo reale.</p>
+          <div class="btns">
+            <a href="https://cammo22.github.io/Gioco1/" target="_blank" rel="noopener" class="aqua green sm"><i class="fas fa-play"></i> Gioca</a>
+            <a href="https://github.com/cammo22/Gioco1" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+          </div>
         </div>
       </article>
-
+      <article class="mini glass rv" style="--neon:#b36bff">
+        <a class="screen sm" href="https://cammo22.github.io/TapTap/" target="_blank" rel="noopener" aria-label="Gioca a Chronicles Idle Legends">
+          <img class="shot" src="img/giochi/chronicles.webp" alt="Chronicles Idle Legends: il Cristallo primordiale, Kael Custode dell'Alba e i potenziamenti" loading="lazy" width="1280" height="800">
+          <span class="play-over"><i class="fas fa-play"></i> GIOCA</span>
+        </a>
+        <div class="mini-info">
+          <h3>Chronicles Idle Legends</h3>
+          <p class="chips"><span>tap &amp; idle</span><span>fantasy</span></p>
+          <p>Sei Kael, Custode dell'Alba. Tocchi il <b>Cristallo primordiale</b> e la combo sale finché non ti fermi. Intanto sconfiggi i boss, assoldi compagni, fai crescere l'albero dei talenti e vai avanti di capitolo.</p>
+          <div class="btns">
+            <a href="https://cammo22.github.io/TapTap/" target="_blank" rel="noopener" class="aqua green sm"><i class="fas fa-play"></i> Gioca</a>
+            <a href="https://github.com/cammo22/TapTap" target="_blank" rel="noopener" class="aqua ghost sm"><i class="fab fa-github"></i> Codice</a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -175,7 +280,7 @@
 <section class="sec" id="laboratorio">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">// 02 &mdash; laboratorio</p>
+      <p class="kicker">// 03 &mdash; laboratorio</p>
       <h2>Altre cose che ho fatto</h2>
       <p>Esperimenti, strumenti piccoli e siti fatti per chi me li ha chiesti.</p>
     </div>
@@ -223,7 +328,7 @@
 <section class="sec" id="musica">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">// 03 &mdash; musica</p>
+      <p class="kicker">// 04 &mdash; musica</p>
       <h2>Produzioni musicali</h2>
       <p>Ogni brano nasce solo con software open source, <b>completamente offline</b>, sul mio PC. Niente cloud, niente plugin a pagamento: volevo vedere fin dove si arriva con strumenti liberi. Giudica tu.</p>
     </div>
@@ -240,7 +345,7 @@
 <section class="sec" id="servizi">
   <div class="wrap">
     <div class="head rv">
-      <p class="kicker">// 04 &mdash; per te</p>
+      <p class="kicker">// 05 &mdash; per te</p>
       <h2>Se ti serve una mano</h2>
       <p>Queste le faccio anche su richiesta. Scrivimi e ne parliamo, il preventivo non costa niente.</p>
     </div>
@@ -277,7 +382,7 @@
         <div class="bubble-frame"><img src="img/fotoprofilo.JPG" alt="Cammo"></div>
       </div>
       <div class="about-txt">
-        <p class="kicker">// 05 &mdash; chi sono</p>
+        <p class="kicker">// 06 &mdash; chi sono</p>
         <h2>Cammo, classe &rsquo;96</h2>
         <p>Napoletano, smanettone da sempre. Mi piace costruire cose che si possono toccare o provare subito: un gioco che parte con un clic, un programma che fa il suo lavoro senza chiederti un account, un pezzo di plastica che esce dalla stampante esattamente come l&rsquo;avevi pensato.</p>
         <p>Credo che la tecnologia debba essere libera e restare a casa tua. Per questo lavoro quasi sempre open source e offline, lontano dai grandi cloud. DaProd è il nome sotto cui metto tutto quanto.</p>
@@ -291,7 +396,7 @@
 <section class="sec" id="contatti">
   <div class="wrap">
     <div class="contact glass rv">
-      <p class="kicker">// 06 &mdash; contatti</p>
+      <p class="kicker">// 07 &mdash; contatti</p>
       <h2>Scrivimi</h2>
       <p>Di cosa vuoi parlare?</p>
       <div class="topics" role="radiogroup" aria-label="Argomento">
