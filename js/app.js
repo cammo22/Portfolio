@@ -64,7 +64,7 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // ── MACCHINA DA SCRIVERE ──
 (function(){
-  const words = ['giochi arcade nel browser.', 'app AI che girano sul tuo PC.', 'gestionali senza abbonamento.', 'musica, tutta offline.', 'oggetti in stampa 3D.'];
+  const words = ['app AI che girano sul tuo PC.', 'montaggio video vecchio stile.', 'giochi arcade nel browser.', 'gestionali senza abbonamento.', 'siti fatti a mano.', 'musica, tutta offline.', 'oggetti in stampa 3D.'];
   const el = document.getElementById('tw');
   if (REDUCED) { el.textContent = words[0]; return; }
   let wi = 0, ci = 0, del = false;
@@ -110,15 +110,79 @@ const reveal = new IntersectionObserver(es => es.forEach(e => {
 }), {threshold:.12, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el => reveal.observe(el));
 
-// ── SALA SLOT: miniature ──
-document.querySelectorAll('.cab').forEach(cab => {
-  const shot = cab.querySelector('.screen .shot');
-  cab.querySelectorAll('.thumb').forEach(t => t.addEventListener('click', () => {
-    cab.querySelectorAll('.thumb').forEach(o => o.classList.toggle('on', o === t));
+// ── GALLERIE: le miniature cambiano la foto grande (cabinati, programmi, siti) ──
+document.querySelectorAll('[data-gal]').forEach(gal => {
+  const shot = gal.querySelector('.shot'), titolo = gal.querySelector('.win-t');
+  gal.querySelectorAll('.thumb').forEach(t => t.addEventListener('click', () => {
+    gal.querySelectorAll('.thumb').forEach(o => o.classList.toggle('on', o === t));
     shot.style.opacity = 0;
-    setTimeout(() => { shot.src = t.dataset.src; shot.alt = t.dataset.alt; shot.style.opacity = 1; }, 180);
+    setTimeout(() => {
+      shot.src = t.dataset.src; shot.alt = t.dataset.alt; shot.style.opacity = 1;
+      if (titolo && t.dataset.t) titolo.textContent = t.dataset.t;
+    }, 180);
   }));
 });
+
+// ── TESSERINI: si girano ──
+document.querySelectorAll('.idcard').forEach(card => {
+  const [fronte, retro] = card.querySelectorAll('.id-face');
+  card.querySelectorAll('.id-flip').forEach(b => b.addEventListener('click', () => {
+    const girata = card.classList.toggle('girata');
+    fronte.setAttribute('aria-hidden', girata); retro.setAttribute('aria-hidden', !girata);
+    // solo la faccia visibile si raggiunge col tab
+    fronte.querySelectorAll('a,button').forEach(el => el.tabIndex = girata ? -1 : 0);
+    retro.querySelectorAll('a,button').forEach(el => el.tabIndex = girata ? 0 : -1);
+    (girata ? retro : fronte).querySelector('.id-flip').focus({ preventScroll: true });
+  }));
+});
+
+// ── IL TERMINALE DI CAMMO E BABBASONE: si scrive quando arriva sullo schermo ──
+(function(){
+  const pre = document.getElementById('duo');
+  if (!pre || REDUCED) return;
+  const righe = pre.innerHTML.split('\n');
+  const piano = righe.map(r => { const m = r.match(/^(<span[^>]*>[^<]*<\/span>)(.*)$/); return m ? [m[1], m[2]] : ['', r]; });
+  let partito = false;
+  new IntersectionObserver((es, ob) => {
+    if (!es[0].isIntersecting || partito) return;
+    partito = true; ob.disconnect();
+    pre.innerHTML = '';
+    let i = 0;
+    function riga(){
+      if (i >= piano.length) { pre.insertAdjacentHTML('beforeend', '<span class="cur"></span>'); return; }
+      const [pr, testo] = piano[i];
+      const el = document.createElement('span');
+      el.innerHTML = (i ? '\n' : '') + pr + ' ';
+      pre.appendChild(el);
+      const t = document.createTextNode(''); pre.appendChild(t);
+      const txt = new DOMParser().parseFromString(testo, 'text/html').body.textContent.trimStart();
+      let c = 0;
+      (function scrivi(){
+        t.data = txt.slice(0, ++c);
+        if (c < txt.length) setTimeout(scrivi, pr.includes('class="b"') ? 16 : 38);
+        else { i++; setTimeout(riga, 520); }
+      })();
+    }
+    riga();
+  }, { threshold: .5 }).observe(pre);
+})();
+
+// ── NUMERI: contano fino al valore ──
+(function(){
+  const nums = document.querySelectorAll('.stats b[data-n]');
+  if (REDUCED) return;
+  const ob = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    ob.unobserve(e.target);
+    const fine = +e.target.dataset.n, t0 = performance.now();
+    (function passo(t){
+      const k = Math.min(1, (t - t0) / 1100);
+      e.target.textContent = Math.round(fine * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) requestAnimationFrame(passo);
+    })(t0);
+  }), { threshold: .6 });
+  nums.forEach(n => ob.observe(n));
+})();
 
 // ── CONTATTI ──
 (function(){
