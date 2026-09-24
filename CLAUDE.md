@@ -13,9 +13,18 @@ Sito portfolio di Cammo / DaProd, pubblicato su GitHub Pages: https://cammo22.gi
 ## Struttura
 
 - `index.html`, `css/style.css`, `js/app.js`: HTML, CSS e JS scritti a mano, niente build
-- `img/giochi/`: screenshot dei giochi della Sala Slot (WebP)
+- `img/progetti/`, `img/giochi/`, `img/siti/`: screenshot di programmi, Sala Slot e siti fatti per altri (WebP).
+  Si fanno in Chromium dagli script `test/foto.mjs` di ogni repo, o aprendo la demo (DaProdFinanza: build
+  `vite.android.config.ts`, accesso consulente `cammo / 1234`; DaProd Suite: `apps/shell/scripts/banco-console.mjs`)
 - `img/readme/`: banner e screenshot usati nel README
+- `img/babbasone.svg`: l'avatar di Babbasone per il suo tesserino
 - `video.txt`: video YouTube della sezione Musica (un link per riga)
+
+## Contenuti
+
+- La pagina è ordinata per **divisioni** di DaProd Produzioni: Software, Giochi (Sala Slot), Web, Musica, 3D, Operazioni.
+  In cima ci sono i tesserini di **Cammo** (l'umano) e **Babbasone** (l'assistente digitale).
+- Ogni repo selezionata ha la sua scheda con galleria di screenshot: quando esce una versione nuova, si rifanno le foto.
 
 ## Stile
 

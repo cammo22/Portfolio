@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Babbasone, l'assistente digitale di DaProd">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#0f3a3a"/><stop offset=".7" stop-color="#051614"/><stop offset="1" stop-color="#020806"/>
+    </radialGradient>
+    <linearGradient id="testa" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#d9fbff"/><stop offset=".45" stop-color="#3ddbff"/><stop offset=".5" stop-color="#0a86c4"/><stop offset="1" stop-color="#3ddbff"/>
+    </linearGradient>
+    <linearGradient id="visiera" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b2a22"/><stop offset="1" stop-color="#020806"/>
+    </linearGradient>
+    <linearGradient id="lucido" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="palla" cx="35%" cy="30%" r="70%">
+      <stop offset="0" stop-color="#eaffc9"/><stop offset=".6" stop-color="#00ff41"/><stop offset="1" stop-color="#0a8a26"/>
+    </radialGradient>
+    <filter id="alone" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="240" height="240" fill="url(#bg)"/>
+  <g stroke="#00ff41" stroke-opacity=".12">
+    <path d="M0 200H240M0 215H240M0 228H240M40 190L10 240M80 190L70 240M120 190V240M160 190L170 240M200 190L230 240"/>
+  </g>
+  <!-- antenna -->
+  <path d="M120 58V34" stroke="#9fe9ff" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="120" cy="28" r="11" fill="url(#palla)"/>
+  <circle cx="120" cy="28" r="16" fill="#00ff41" opacity=".35" filter="url(#alone)"/>
+  <ellipse cx="116" cy="24" rx="4" ry="2.5" fill="#fff" opacity=".8"/>
+  <!-- orecchie -->
+  <rect x="30" y="104" width="22" height="46" rx="10" fill="url(#testa)" stroke="#063a55" stroke-width="2"/>
+  <rect x="188" y="104" width="22" height="46" rx="10" fill="url(#testa)" stroke="#063a55" stroke-width="2"/>
+  <!-- testa -->
+  <rect x="46" y="56" width="148" height="136" rx="40" fill="url(#testa)" stroke="#063a55" stroke-width="3"/>
+  <path d="M60 70q60-22 120 0v34q-60-14-120 0z" fill="url(#lucido)" opacity=".7"/>
+  <!-- visiera -->
+  <rect x="62" y="100" width="116" height="62" rx="26" fill="url(#visiera)" stroke="#00ff41" stroke-opacity=".6" stroke-width="2"/>
+  <g class="occhi">
+    <rect x="84" y="116" width="22" height="26" rx="8" fill="#00ff41"/>
+    <rect x="134" y="116" width="22" height="26" rx="8" fill="#00ff41"/>
+    <rect x="84" y="116" width="22" height="26" rx="8" fill="#00ff41" filter="url(#alone)" opacity=".8"/>
+    <rect x="134" y="116" width="22" height="26" rx="8" fill="#00ff41" filter="url(#alone)" opacity=".8"/>
+    <rect x="89" y="120" width="6" height="7" rx="2" fill="#eaffea"/>
+    <rect x="139" y="120" width="6" height="7" rx="2" fill="#eaffea"/>
+  </g>
+  <path d="M104 150q16 9 32 0" stroke="#3ddbff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- guance -->
+  <ellipse cx="74" cy="170" rx="9" ry="5" fill="#ff5c8a" opacity=".45"/>
+  <ellipse cx="166" cy="170" rx="9" ry="5" fill="#ff5c8a" opacity=".45"/>
+  <!-- bollino D -->
+  <circle cx="120" cy="80" r="11" fill="#020806" stroke="#ffd54a" stroke-width="2"/>
+  <text x="120" y="85" font-family="Space Mono, monospace" font-weight="700" font-size="14" text-anchor="middle" fill="#ffd54a">B</text>
+</svg>
