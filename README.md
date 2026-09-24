@@ -73,10 +73,10 @@ quello che ci stiamo costruendo intorno.
 <td width="50%" valign="top">
 <a href="https://github.com/cammo22/DaProdSuite"><img src="img/progetti/suite-hub.webp" alt="La home di DaProd Suite"></a>
 
-### 🪄 DaProd Suite · 1.3.9
-I migliori modelli AI, pronti in due clic: canzoni, immagini, video col suono, voci, un avatar
-che ti risponde. Un ambiente solo, una GPU gestita un modello per volta, e dal telefono vedi la fila.
-Niente account né chiavi API.
+### 🪄 DaProd Suite · 1.4.0
+I migliori modelli AI, pronti in due clic: canzoni (ACE-Step, YuE2), immagini create e modificate
+con Qwen-Image 2.1, modellini 3D da una foto (TRELLIS.2), video col suono, voci, un avatar che ti
+risponde. Rifatta col vestito DaProd, con la sala giochi e la Lira DaProd dentro. Niente account né chiavi API.
 
 [⬇ Scarica](https://github.com/cammo22/DaProdSuite/releases/latest) · [🌐 Sito](https://cammo22.github.io/DaProdSuite/) · [codice](https://github.com/cammo22/DaProdSuite)
 </td>
@@ -114,6 +114,10 @@ lancetta, tendine SMPTE, EDL. **1** taglia, **2** elimina. Windows, Mac, Android
 
 La Sala Slot. Tutti partono nel browser, anche dal telefono, e i tre cabinati hanno anche
 l'app per Android, Windows e Mac. Non c'è pubblicità. Si gioca con le lire, **1 € = 1.936,27 ₤**.
+
+**La Lira DaProd** è il portafoglio unico dei tre cabinati: giochi, fai punti, e quando smetti
+**stacchi** — i punti diventano lire alla quotazione della Borsa, che sale quando si spende e scende
+quando si incassa. Con le lire ricarichi in qualunque cabinato.
 
 <table>
 <tr>
