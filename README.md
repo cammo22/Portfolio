@@ -115,9 +115,9 @@ lancetta, tendine SMPTE, EDL. **1** taglia, **2** elimina. Windows, Mac, Android
 La Sala Slot. Tutti partono nel browser, anche dal telefono, e i tre cabinati hanno anche
 l'app per Android, Windows e Mac. Non c'è pubblicità. Si gioca con le lire, **1 € = 1.936,27 ₤**.
 
-**La Lira DaProd** è il portafoglio unico dei tre cabinati: giochi, fai punti, e quando smetti
-**stacchi** — i punti diventano lire alla quotazione della Borsa, che sale quando si spende e scende
-quando si incassa. Con le lire ricarichi in qualunque cabinato.
+Qui sono demo. Dentro la [DaProd Suite](https://github.com/cammo22/DaProdSuite) gli stessi tre cabinati
+stanno nella sala giochi, e lì c'è **la Lira DaProd**: la partita si stacca in lire alla quotazione della
+Borsa, e le cose grosse danno le carte per la slot delle combinazioni.
 
 <table>
 <tr>
