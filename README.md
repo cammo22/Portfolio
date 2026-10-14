@@ -10,6 +10,7 @@
 [![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-online-3ddbff?style=flat-square)](https://cammo22.github.io/Portfolio/)
 [![Zero build](https://img.shields.io/badge/HTML·CSS·JS-zero_build-00ff41?style=flat-square&labelColor=04120c)](index.html)
 [![Napoli](https://img.shields.io/badge/fatto_a-Napoli-3ddbff?style=flat-square&labelColor=04120c)](#-la-squadra)
+[![Discord](https://img.shields.io/badge/Discord-DaProd-5865F2?logo=discord&logoColor=white)](https://discord.gg/Njs52aacwq)
 
 **[🌐 Sito](https://cammo22.github.io/Portfolio/)** ·
 **[🏢 L'azienda](#-lazienda-e-le-sue-divisioni)** ·
