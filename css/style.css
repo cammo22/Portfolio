@@ -176,8 +176,9 @@ b, strong { font-weight:800; color:var(--head); }
   background:linear-gradient(180deg,#eaffea,#00ff41 60%,#0a9a2a); -webkit-background-clip:text; background-clip:text;
   filter:drop-shadow(0 0 10px rgba(0,255,65,.45));
 }
-.hero-line { font:700 clamp(1.05rem,2.4vw,1.35rem)/1.4 var(--mono); color:var(--txt); min-height:1.5em; text-align:center; }
-.tw { color:var(--cy); }
+.hero-line { font:700 clamp(1.05rem,2.4vw,1.35rem)/1.4 var(--mono); color:var(--txt); min-height:1.5em; }
+.tw { color:var(--g); }
+.caret { display:inline-block; width:.6em; height:1.1em; margin-left:2px; vertical-align:-.2em; background:var(--g); box-shadow:0 0 8px var(--g); animation:blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity:0; } }
 .hero-sub { max-width:34em; margin:16px 0 28px; color:var(--txt2); font-size:1.08rem; }
 .hero-btns { display:flex; flex-wrap:wrap; gap:14px; }
