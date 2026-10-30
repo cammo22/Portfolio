@@ -177,6 +177,7 @@ b, strong { font-weight:800; color:var(--head); }
   filter:drop-shadow(0 0 10px rgba(0,255,65,.45));
 }
 .hero-line { font:700 clamp(1.05rem,2.4vw,1.35rem)/1.4 var(--mono); color:var(--txt); min-height:1.5em; }
+.hero-line .pr { color:var(--cy); }
 .tw { color:var(--g); }
 .caret { display:inline-block; width:.6em; height:1.1em; margin-left:2px; vertical-align:-.2em; background:var(--g); box-shadow:0 0 8px var(--g); animation:blink 1s steps(1) infinite; }
 @keyframes blink { 50% { opacity:0; } }
