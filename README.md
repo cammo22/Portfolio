@@ -20,6 +20,7 @@
 **[🌐 Sito](https://cammo22.github.io/Portfolio/)** ·
 **[🏢 L'azienda](#-lazienda-e-le-sue-divisioni)** ·
 **[💻 Software](#-divisione-01--daprod-software)** ·
+**[🛒 DaProdStore](https://cammo22.github.io/DaProdStore/)** ·
 **[🎰 Sala Slot](#-divisione-02--daprod-giochi)** ·
 **[🌍 Siti](#-divisione-03--daprod-web)** ·
 **[✉️ Scrivimi](mailto:dapprod22@gmail.com)**
@@ -61,7 +62,7 @@ quello che ci stiamo costruendo intorno.
 
 | | Divisione | Cosa fa | Progetti |
 |:-:|---|---|---|
-| 💻 | **DaProd Software** | Programmi veri che girano sul tuo computer | [DaProd Suite](https://github.com/cammo22/DaProdSuite) · [DaProdFinanza](https://github.com/cammo22/DaProdFinanza) · [DaProd Video](https://github.com/cammo22/DaProdVideo) |
+| 💻 | **DaProd Software** | Programmi veri che girano sul tuo computer | [DaProd Suite](https://github.com/cammo22/DaProdSuite) · [DaProdFinanza](https://github.com/cammo22/DaProdFinanza) · [DaProd Editor Video](https://github.com/cammo22/DaProdEditorVideo) |
 | 🎰 | **DaProd Giochi** | La Sala Slot: giochi nel browser e app, si paga in lire | [Coin Dozer](https://github.com/cammo22/daprod-coin-dozer) · [Claw Machine](https://github.com/cammo22/DaProd-ClawMachine) · [Neon Partenope](https://github.com/cammo22/daprod-neon-partenope) |
 | 🌍 | **DaProd Web** | Siti fatti a mano per chi me li chiede | [Progetto Diana](https://github.com/cammo22/ProgettoDiana) · [Pino Soprano](https://github.com/cammo22/PinoSoprano) · [Brambilla](https://github.com/cammo22/Brmbll) · [LG Shoes](https://github.com/cammo22/LG-Shoes) · questo sito |
 | 🎵 | **DaProd Musica** | Brani fatti solo con software libero, offline | [DaProdMusica su YouTube](https://www.youtube.com/@DaProdMusica/videos) |
@@ -98,13 +99,12 @@ circolante, tesoreria, simulazioni e report PDF. I numeri non escono dal compute
 </tr>
 <tr>
 <td width="50%" valign="top">
-<a href="https://cammo22.github.io/DaProdVideo/app/"><img src="img/progetti/video-banco.webp" alt="Il banco di montaggio di DaProd Video"></a>
+<a href="https://cammo22.github.io/DaProdEditorVideo/app/"><img src="img/progetti/video-banco.webp" alt="Il banco di montaggio di DaProd Editor Video"></a>
 
-### 🎬 DaProd Video · 1.0.0
-Il banco di montaggio vecchio stile, moderno dentro: Player e Recorder, pulsantiera, VU a
-lancetta, tendine SMPTE, EDL. **1** taglia, **2** elimina. Windows, Mac, Android e browser.
+### 🎬 DaProd Editor Video · 1.8
+Il banco di montaggio con la grafica Banco. **LIVE** per le scene in diretta, **Montage** che monta da solo e AI locali opzionali.
 
-[▶ Prova](https://cammo22.github.io/DaProdVideo/app/) · [⬇ Scarica](https://github.com/cammo22/DaProdVideo/releases/latest) · [codice](https://github.com/cammo22/DaProdVideo)
+[▶ Prova](https://cammo22.github.io/DaProdEditorVideo/app/) · [⬇ Scarica](https://github.com/cammo22/DaProdEditorVideo/releases/latest) · [codice](https://github.com/cammo22/DaProdEditorVideo)
 </td>
 <td width="50%" valign="top">
 
