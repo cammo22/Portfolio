@@ -40,7 +40,7 @@ Questa è la casa di **DaProd** su GitHub: il sito portfolio, e da qui i link a 
 quello che ci stiamo costruendo intorno.
 
 <div align="center">
-<a href="https://cammo22.github.io/Portfolio/"><img src="img/readme/sito-desktop.webp" alt="La home del sito: titolo DaProd, prompt da terminale e il riquadro con i progetti sul banco" width="100%"></a>
+<a href="https://cammo22.github.io/Portfolio/"><img src="img/readme/sito-desktop.webp" alt="La home del sito: titolo DaProd, scritta animata e il riquadro con i progetti sul banco" width="100%"></a>
 </div>
 
 ## 🪪 La squadra
@@ -107,6 +107,11 @@ Il banco di montaggio con la grafica Banco. **LIVE** per le scene in diretta, **
 [▶ Prova](https://cammo22.github.io/DaProdEditorVideo/app/) · [⬇ Scarica](https://github.com/cammo22/DaProdEditorVideo/releases/latest) · [codice](https://github.com/cammo22/DaProdEditorVideo)
 </td>
 <td width="50%" valign="top">
+
+### 🔄 DaP Convertitore
+Tasto destro per convertire video, audio, foto, PDF, documenti e archivi su Windows. Supporta NVENC e lavora tutto in locale.
+
+[⬇ Scarica](https://github.com/cammo22/DaP-Convertitore/releases/latest) · [Store](https://cammo22.github.io/DaProdStore/) · [codice](https://github.com/cammo22/DaP-Convertitore)
 
 ### 🧪 Dal laboratorio
 - **[LTX Prompt Builder](https://github.com/cammo22/ltx-prompt-builder)**: prompt guidati per generare video con LTX
@@ -236,7 +241,7 @@ HTML, CSS e JavaScript scritti a mano: niente framework e niente build.
 ```
 index.html         la pagina
 css/style.css      stile: base scura tech + dettagli lucidi Y2K / Aero
-js/app.js          pioggia matrix, bolle, macchina da scrivere, gallerie, tesserini, menu, contatti, video
+js/app.js          pioggia matrix, macchina da scrivere, gallerie, tesserini, menu, contatti, video
 video.txt          i video YouTube mostrati nella sezione Musica (un link per riga)
 img/progetti/      screenshot dei programmi (Suite, Finanza, Video)
 img/giochi/        screenshot della Sala Slot

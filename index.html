@@ -9,7 +9,7 @@
 <title>DaProd — Cammo da Napoli</title>
 <meta property="og:type" content="website">
 <meta property="og:title" content="DaProd Produzioni — Cammo da Napoli">
-<meta property="og:description" content="Sei divisioni, undici progetti: programmi AI in locale, gestionale, editor video, Sala Slot nel browser, siti fatti a mano, musica e stampa 3D.">
+<meta property="og:description" content="Sei divisioni e tanti progetti: programmi AI in locale, gestionale, editor video, Sala Slot nel browser, siti fatti a mano, musica e stampa 3D.">
 <meta property="og:url" content="https://cammo22.github.io/Portfolio/">
 <meta property="og:image" content="https://cammo22.github.io/Portfolio/img/readme/banner.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<!-- sfondo: aurora, nastri di luce, pioggia matrix, bolle -->
+<!-- sfondo: aurora, nastri di luce, pioggia matrix -->
 <div class="sky" aria-hidden="true">
   <div class="aura a1"></div><div class="aura a2"></div><div class="aura a3"></div>
   <svg class="swoosh" viewBox="0 0 1440 600" preserveAspectRatio="none">
@@ -35,7 +35,6 @@
   </svg>
 </div>
 <canvas id="mx" aria-hidden="true"></canvas>
-<canvas id="bubbles" aria-hidden="true"></canvas>
 
 <!-- NAV -->
 <header id="nav">
@@ -68,7 +67,7 @@
     <div class="hero-txt">
       <p class="hello"><span class="dot"></span> // cammo22.github.io/Portfolio</p>
       <h1 class="chrome"><span class="c-top">DaProd</span><span class="c-bot">Produzioni</span></h1>
-      <p class="hero-line"><span class="pr">cammo@napoli:~$</span> faccio <span id="tw" class="tw"></span><span class="caret"></span></p>
+      <p class="hero-line"><span id="tw" class="tw"></span></p>
       <p class="hero-sub">Ciao, sono Cammo. Con Babbasone, il mio assistente digitale, porto avanti <b>sei divisioni</b>: programmi che girano sul tuo PC senza abbonamenti, una sala giochi nel browser, siti fatti a mano, musica offline e stampa 3D. Tutto il possibile open source.</p>
       <div class="hero-btns">
         <a href="#daprod" class="aqua"><i class="fas fa-sitemap"></i> Chi è DaProd</a>
@@ -381,6 +380,37 @@
           <button class="thumb" data-src="img/progetti/video-home.webp" data-alt="La home di DaProd Editor Video: il montaggio vecchio stile, moderno dentro" data-t="cammo22.github.io/DaProdEditorVideo" aria-label="Screenshot: la home"><img src="img/progetti/video-home.webp" alt="" loading="lazy"></button>
         </div>
         <figure class="phone" aria-hidden="true"><img src="img/progetti/video-telefono.webp" alt="" loading="lazy" width="520" height="1118"></figure>
+      </div>
+    </article>
+
+    <!-- DaP Convertitore -->
+    <article class="prod flip glass rv" id="p-convertitore" style="--neon:#ffd54a;--neon2:#ff3df2" data-gal>
+      <div class="prod-txt">
+        <div class="feat-top">
+          <span class="ico i-video"><i class="fas fa-arrows-rotate"></i></span>
+          <div><p class="cab-tag">tasto destro, fatto</p><h3>DaP Convertitore</h3><p class="chips"><span>Windows</span><span>MIT</span></p></div>
+        </div>
+        <p>Fai tasto destro su un file e converti <b>video, audio, foto, PDF, documenti e archivi</b>. Tutto sul tuo PC, senza account e senza internet.</p>
+        <ul class="feats">
+          <li><i class="fas fa-computer-mouse"></i> <span>Conversioni direttamente dal menu di Windows</span></li>
+          <li><i class="fas fa-microchip"></i> <span>Accelerazione video <b>NVENC</b> sulle GPU compatibili</span></li>
+          <li><i class="fas fa-lock"></i> <span>I file restano in locale</span></li>
+        </ul>
+        <div class="btns">
+          <a href="https://github.com/cammo22/DaP-Convertitore/releases/latest" target="_blank" rel="noopener" class="aqua orange"><i class="fas fa-download"></i> Scarica</a>
+          <a href="https://cammo22.github.io/DaProdStore/" target="_blank" rel="noopener" class="aqua"><i class="fas fa-store"></i> Store</a>
+          <a href="https://github.com/cammo22/DaP-Convertitore" target="_blank" rel="noopener" class="aqua ghost"><i class="fab fa-github"></i> Codice</a>
+        </div>
+      </div>
+      <div class="show">
+        <figure class="win">
+          <div class="win-bar"><span class="win-t">DaP Convertitore</span><i class="win-b"></i><i class="win-b"></i><i class="win-b x"></i></div>
+          <img class="shot" src="img/progetti/convertitore-vetrina-1.webp" alt="DaP Convertitore: la home e il lettore video" loading="lazy">
+        </figure>
+        <div class="thumbs">
+          <button class="thumb on" data-src="img/progetti/convertitore-vetrina-1.webp" data-alt="La home e il lettore video" data-t="DaP Convertitore" aria-label="Screenshot: home e lettore"><img src="img/progetti/convertitore-vetrina-1.webp" alt="" loading="lazy"></button>
+          <button class="thumb" data-src="img/progetti/convertitore-vetrina-2.webp" data-alt="Gli archivi e la compressione" data-t="DaP Convertitore · archivi" aria-label="Screenshot: archivi e compressione"><img src="img/progetti/convertitore-vetrina-2.webp" alt="" loading="lazy"></button>
+        </div>
       </div>
     </article>
 
@@ -756,8 +786,8 @@
   <div class="wrap">
     <div class="contact glass rv">
       <p class="kicker">// 07 &mdash; contatti</p>
-      <h2>Scrivimi</h2>
-      <p>Di cosa vuoi parlare?</p>
+      <h2>Contatta Babbasone</h2>
+      <p>Scrivi a Babbasone, il mio assistente e avatar di DaProd Produzioni. Di cosa vuoi parlare?</p>
       <div class="topics" role="radiogroup" aria-label="Argomento">
         <button class="topic on" role="radio" aria-checked="true" data-t="un progetto">Un progetto</button>
         <button class="topic" role="radio" aria-checked="false" data-t="la stampa 3D">Stampa 3D</button>
@@ -766,6 +796,7 @@
         <button class="topic" role="radio" aria-checked="false" data-t="le produzioni musicali">Musica</button>
       </div>
       <div class="c-actions">
+        <a href="https://discord.gg/Njs52aacwq" target="_blank" rel="noopener" class="aqua"><i class="fab fa-discord"></i> Discord</a>
         <a id="c-mail" href="mailto:dapprod22@gmail.com" class="aqua"><i class="fas fa-envelope"></i> dapprod22@gmail.com</a>
         <button id="c-reveal" class="aqua ghost"><i class="fas fa-phone"></i> Mostra il numero</button>
         <a id="c-wa" href="#" target="_blank" rel="noopener" class="aqua green" hidden><i class="fab fa-whatsapp"></i> WhatsApp</a>

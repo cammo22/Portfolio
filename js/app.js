@@ -21,47 +21,6 @@ const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
   setInterval(() => { if (!document.hidden) draw(); }, 55);
 })();
 
-// ── BOLLE ──
-(function(){
-  const c = document.getElementById('bubbles'), x = c.getContext('2d');
-  let W, H, dpr, bs = [];
-  function mk(fromBottom){
-    const r = 6 + Math.random()*Math.random()*38;
-    return { x:Math.random()*W, y:fromBottom ? H + r + Math.random()*H*.3 : Math.random()*H, r,
-      v:.15 + Math.random()*.45 + r/140, w:Math.random()*Math.PI*2, ws:.004 + Math.random()*.01 };
-  }
-  function resize(){
-    dpr = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
-    c.width = W*dpr; c.height = H*dpr; c.style.width = W+'px'; c.style.height = H+'px';
-    x.setTransform(dpr,0,0,dpr,0,0);
-    const n = Math.round(Math.min(16, W/80));
-    bs = Array.from({length:n}, () => mk(false));
-  }
-  function bubble(b){
-    const g = x.createRadialGradient(b.x - b.r*.35, b.y - b.r*.4, b.r*.05, b.x, b.y, b.r);
-    g.addColorStop(0, 'rgba(255,255,255,.28)');
-    g.addColorStop(.55, 'rgba(61,219,255,.03)');
-    g.addColorStop(.9, 'rgba(61,255,160,.14)');
-    g.addColorStop(1, 'rgba(180,255,230,.4)');
-    x.fillStyle = g; x.beginPath(); x.arc(b.x, b.y, b.r, 0, Math.PI*2); x.fill();
-    x.fillStyle = 'rgba(255,255,255,.6)';
-    x.beginPath(); x.ellipse(b.x - b.r*.38, b.y - b.r*.45, b.r*.26, b.r*.14, -.6, 0, Math.PI*2); x.fill();
-  }
-  function frame(){
-    x.clearRect(0,0,W,H);
-    bs.forEach((b,i) => {
-      b.y -= b.v; b.w += b.ws; b.x += Math.sin(b.w)*.35;
-      if (b.y < -b.r*2) bs[i] = mk(true);
-      bubble(b);
-    });
-    if (!document.hidden) requestAnimationFrame(frame);
-  }
-  resize(); addEventListener('resize', resize);
-  if (REDUCED) { bs.forEach(bubble); return; }
-  requestAnimationFrame(frame);
-  document.addEventListener('visibilitychange', () => { if (!document.hidden) requestAnimationFrame(frame); });
-})();
-
 // ── MACCHINA DA SCRIVERE ──
 (function(){
   const words = ['app AI che girano sul tuo PC.', 'montaggio video vecchio stile.', 'giochi arcade nel browser.', 'gestionali senza abbonamento.', 'siti fatti a mano.', 'musica, tutta offline.', 'oggetti in stampa 3D.'];
